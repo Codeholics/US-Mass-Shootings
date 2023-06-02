@@ -18,9 +18,16 @@ I started this project after multiple mass shootings were covered in the news. T
 
 After conducting an extensive research to align on the definition of a mass shooting is for this project. I was able to locate 1 definition of a mass shooting which was posted by the FBI on their .gov site a good while back. Still not sure why 1 government agency would define it and no other government agency or media adheres to it and instead creating their own definition.
 
+According to the FBI and the Victims of National Crime the [mass shooting threshold was changed in 2013, down from 4 victims to 3](https://ovc.ojp.gov/sites/g/files/xyckuh226/files/ncvrw2018/info_flyers/fact_sheets/2018NCVRW_MassCasualty_508_QC.pdf) to qualify for a mass shooting. This also exclude normal criminal gun violence.
+
 I chose the [Mother Jones](https://www.motherjones.com/) data for this
 
 - Follows the same definition provided by the FBI.
+- Office of Justice Programs: The National Center for Victims of Crime [references Mother Jones](https://ovc.ojp.gov/sites/g/files/xyckuh226/files/ncvrw2018/info_flyers/fact_sheets/2018NCVRW_MassCasualty_508_QC.pdf) as well. 
+  - *USA Today recorded more than 350 mass shootings between 
+2006 and 2017, while Mother Jones has recorded 95 since 1982. This fact 
+sheet presents data published by Mother Jones, as it is kept current and 
+most closely follows the federal agency definitions.*
 - Media reports are reviewed and only those that meet the definition are added.
 - Data is updated regularly and publically Available to download as a CSV.
 
