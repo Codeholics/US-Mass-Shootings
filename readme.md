@@ -61,6 +61,8 @@ I have a second process that takes the CSVs and imports the data into a SQLite f
 - [PSWriteHTML](https://www.powershellgallery.com/packages/PSWriteHTML/0.0.189)
 - [PSSQLite](https://www.powershellgallery.com/packages/PSSQLite/1.1.0)
 
+It is not required, but I found it best to review the data in the SQLite file by using [DB Browser (SQLite)](https://sqlitebrowser.org/).
+
 
 <br>
 
