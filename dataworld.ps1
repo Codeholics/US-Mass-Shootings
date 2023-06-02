@@ -1,14 +1,32 @@
-Import-Module -Name PSWriteHTML
+Import-Module -Name PSWriteHTML, PSSQLite
 
-$CPSScriptRoot = 'D:\Code\MJ Mass Shooter Database'
+$CPSScriptRoot = 'C:\Code\Mass Shooter Database'
+
 . "$CPSScriptRoot\Functions\Get-MotherJonesDB.ps1"
+. "$CPSScriptRoot\Functions\New-SQLiteDB.ps1"
+. "$CPSScriptRoot\Functions\Push-CHSQLite.ps1"
+. "$CPSScriptRoot\Functions\Push-MJSQLite.ps1"
+
+$SQLitePath = "$CPSScriptRoot\Resources\System.Data.SQLite.dll"
+$DBPath = "$CPSScriptRoot\Export\MassShooterDatabase.sqlite"
 
 $ExportPath = "$CPSScriptRoot\Export"
 $ExportWebView = "$CPSScriptRoot\Export\WebView.html"
 $ExportCHEdition = "$ExportPath\thebleak13s1.csv"
 $ImportCSVPath = "$ExportPath\Mother Jones - Mass Shootings Database 1982-2023.csv"
 
-Get-MotherJonesDB -Output $ExportPath
+# create Export folder if not exist
+if (!(Test-Path $ExportPath)) {
+    New-Item -Path $ExportPath -ItemType Directory
+}
+
+try {
+    Get-MotherJonesDB -Output $ExportPath
+}
+Catch{
+    Write-Warning $_
+}
+
 
 try {
     $spreadsheet = (Import-csv -Path $ImportCSVPath)
@@ -660,6 +678,12 @@ if (test-path $ExportCHEdition) {Remove-Item $ExportCHEdition}
 $data | Export-CSV -path $ExportCHEdition -NoTypeInformation
 
 if (test-path $ExportWebView) {Remove-Item $ExportWebView}
+
+New-SQLiteDB -DirRoot $CPSScriptRoot -SQLitePath $SQLitePath -DBPath $DBPath
+
+Push-CHSQLite -DBPath $DBPath -CSVPath $ExportCHEdition -SQLitePath $SQLitePath -CPSScriptRoot $CPSScriptRoot -TableName 'CHData'
+
+Push-CHSQLite -DBPath $DBPath -CSVPath $ImportCSVPath -SQLitePath $SQLitePath -CPSScriptRoot $CPSScriptRoot -TableName 'MJData'
 
 New-HTML {
     New-HTMLTable -DataTable $data -Title 'Table with Users' -HideFooter -PagingLength 100 -Buttons excelHtml5, searchPanes
