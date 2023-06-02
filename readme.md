@@ -1,9 +1,14 @@
 
 - [Codeholics Edition | Mother Jones Mass Shooter Database 1982-2023](#codeholics-edition--mother-jones-mass-shooter-database-1982-2023)
 - [Changes To Original Data](#changes-to-original-data)
+- [Dependencies](#dependencies)
 - [Executing The Script](#executing-the-script)
 - [Output](#output)
 - [Links](#links)
+
+<br>
+
+![PowerShell v5.1](https://img.shields.io/badge/PowerShell-v5.1-blue)
 
 <br>
 
@@ -41,6 +46,13 @@ The manual process was automated using PowerShell, so we can ensure the same cha
 2. Upload to Data.World
 
 I have a second process that takes the CSVs and imports the data into a SQLite file.
+
+<br>
+
+# Dependencies
+
+- [PSWriteHTML](https://www.powershellgallery.com/packages/PSWriteHTML/0.0.189)
+- [PSSQLite](https://www.powershellgallery.com/packages/PSSQLite/1.1.0)
 
 
 <br>
