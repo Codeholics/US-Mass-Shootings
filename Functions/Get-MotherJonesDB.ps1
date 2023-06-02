@@ -1,5 +1,20 @@
 
 function Get-MotherJonesDB {
+<#
+    .SYNOPSIS
+        Downloads and processes data from the Mother Jones Mass Shooting Database.
+    .DESCRIPTION
+        This function downloads the Mother Jones Mass Shooting Database from a Google Sheets link and processes it into a new CSV file with a standardized date format (M/d/yyyy) and properly escaped single quotes. The resulting CSV file can be used to create a new SQLite database for storing data on mass shootings.
+    .PARAMETER Output
+        Specifies the directory where the new CSV file will be saved.
+    .PARAMETER ExportOG
+        Specifies the file path for the original, unprocessed CSV file.
+    .PARAMETER ExportFixed
+        Specifies the file path for the processed CSV file.
+    .EXAMPLE
+        $CPSScriptRoot = "D:\Github\PowerShell\R AND D\Data World\MJ Mass Shooter Database"
+        Get-MotherJonesDB -Output "$CPSScriptRoot\Export"
+#>
     [cmdletbinding()]
     param (
         [Parameter(Mandatory=$true)]
