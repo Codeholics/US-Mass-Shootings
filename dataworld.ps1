@@ -690,3 +690,4 @@ Push-CHSQLite -DBPath $DBPath -CSVPath $ImportCSVPath -SQLitePath $SQLitePath -C
 New-HTML {
     New-HTMLTable -DataTable $data -Title 'Table with Users' -HideFooter -PagingLength 200 -Buttons excelHtml5, searchPanes
 } -ShowHTML -FilePath $ExportWebView -Online
+
