@@ -149,7 +149,6 @@ foreach($item in $spreadsheet) {
 } 
 
 
-
 # RowIndex1
 $rowIndex1 = [array]::IndexOf($data.summary,'Michael Louis, 45, killed four, including two doctors, and took his own life, according to authorities. "The gunman, who the chief said fatally shot himself, had been carrying a letter saying he blamed his surgeon for continuing back pain and intended to kill him and anyone who got in the way," according to the New York Times. Louis purchased the AR-15-style rifle he used the day of the attack, according to city Police Chief Wendell Franklin.')
 $data[$rowIndex1].injured = "0"
