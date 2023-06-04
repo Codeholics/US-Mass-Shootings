@@ -1,12 +1,15 @@
 Import-Module -Name PSWriteHTML, PSSQLite
 
+# Root folder of the script
 $CPSScriptRoot = 'D:\Github\Repos\US-Mass-Shootings'
 
+# Importing functions
 . "$CPSScriptRoot\Functions\Get-MotherJonesDB.ps1"
 . "$CPSScriptRoot\Functions\New-SQLiteDB.ps1"
-. "$CPSScriptRoot\Functions\Push-CHSQLite.ps1"
-. "$CPSScriptRoot\Functions\Push-MJSQLite.ps1"
+#. "$CPSScriptRoot\Functions\Push-CHSQLite.ps1"
+#. "$CPSScriptRoot\Functions\Push-MJSQLite.ps1"
 
+# Variables
 $Date = Get-Date -Format "yyyyMMdd"
 $Random = Get-Random
 $ExportPath = "$CPSScriptRoot\Export\$Date-$Random"
@@ -23,6 +26,7 @@ if (!(Test-Path $ExportPath)) {
     New-Item -Path $ExportPath -ItemType Directory
 }
 
+# Get Mother Jones CSV and create a new copy without duplicate headers.
 try {
     Get-MotherJonesDB -Output $ExportPath
 }
@@ -30,14 +34,15 @@ Catch{
     Write-Warning $_
 }
 
-
+# Check and confrim the new CSV is avaiable before continuing
 try {
     $spreadsheet = (Import-csv -Path $ImportCSVPath)
 }catch {
     Write-Warning $_
 }
 
-$data = @()
+# Main loop that will correct the data from MJ to build CH edition
+$Data = @()
 foreach($item in $spreadsheet) {
     
     #Splitting city out of location
@@ -674,20 +679,58 @@ $data[$rowIndex83].mental_health_sources = "https://abcnews.go.com/US/anthony-mc
 $data[$rowIndex83].changes = "Added new sources cnn, abcnews, nytimes, etc to help confirm and update data on mental health isssues, weapon details, weapon type. "
 #$data[$rowIndex83]
 
+# Remove CH Edition if it exists
 if (test-path $ExportCHEdition) {Remove-Item $ExportCHEdition}
 
 #Export clean dataset for data.world
 $data | Export-CSV -path $ExportCHEdition -NoTypeInformation
 
+# Remove webview if it exists
 if (test-path $ExportWebView) {Remove-Item $ExportWebView}
 
+# Create SQLite DB
 New-SQLiteDB -DirRoot $CPSScriptRoot -SQLitePath $SQLitePath -DBPath $DBPath
+# Connect to the SQLite DB
+$Connection = New-SqliteConnection -DataSource $DBPath
 
-Push-CHSQLite -DBPath $DBPath -CSVPath $ExportCHEdition -SQLitePath $SQLitePath -CPSScriptRoot $CPSScriptRoot -TableName 'CHData'
+########################
+## CH Edition SQLite ##
+########################
 
-Push-CHSQLite -DBPath $DBPath -CSVPath $ImportCSVPath -SQLitePath $SQLitePath -CPSScriptRoot $CPSScriptRoot -TableName 'MJData'
+# Import the CH Edition and insert records into SQLite DB
+$CH_TableName = 'CHData'
+$CH_CSV = Import-CSV -Path $ExportCHEdition | Sort-Object -Property {[DateTime]::ParseExact($_.date,'yyyy-MM-dd',$null)}
+$CH_CSV | ForEach-Object {
+    # SQL Query to insert records into SQLite DB
+    $CH_Query = "INSERT INTO $CH_TableName ([case], location, city, state, date, summary, fatalities, injured, total_victims, location_2, age_of_Shooter, prior_signs_mental_health_issues, mental_health_details, weapons_obtained_legally, where_obtained, weapon_type, weapon_details, race, gender, sources, mental_health_sources, sources_additional_age, latitude, longitude, type, year, changes) VALUES 
+    ('$($_.case)','$($_.location)','$($_.city)','$($_.state)','$($_.date)','$($_.summary)','$($_.fatalities)','$($_.injured)','$($_.total_victims)','$($_.location_2)','$($_.age_of_Shooter)','$($_.prior_signs_mental_health_issues)','$($_.mental_health_details)','$($_.weapons_obtained_legally)','$($_.where_obtained)','$($_.weapon_type)','$($_.weapon_details)','$($_.race)','$($_.gender)','$($_.sources)','$($_.mental_health_sources)','$($_.sources_additional_age)','$($_.latitude)','$($_.longitude)','$($_.type)','$($_.year)', '$($_.changes)')"
+    $CH_Query
+    # Send SQL query to SQLite DB
+    Invoke-SqliteQuery -Connection $Connection -Query $CH_Query
+}
 
+########################
+## MJ Edition SQLite ##
+########################
+
+# Import the MJ Edition and insert records into SQLite DB
+$MJ_TableName = 'MJData'
+$MJ_CSV = Import-Csv -Path $ImportCSVPath | Sort-Object -Property {[DateTime]::ParseExact($_.date,'yyyy-MM-dd',$null)}
+$MJ_CSV | ForEach-Object {
+        # SQL Query to insert records into SQLite DB
+        $MJ_Query = "INSERT INTO $MJ_TableName ([case], location, date, summary, fatalities, injured, total_victims, location_2, age_of_Shooter, prior_signs_mental_health_issues, mental_health_details, weapons_obtained_legally, where_obtained, weapon_type, weapon_details, race, gender, sources, mental_health_sources, sources_additional_age, latitude, longitude, type, year) VALUES 
+        ('$($_.case)','$($_.location)','$($_.date)','$($_.summary)','$($_.fatalities)','$($_.injured)','$($_.total_victims)','$($_.location_2)','$($_.age_of_Shooter)','$($_.prior_signs_mental_health_issues)','$($_.mental_health_details)','$($_.weapons_obtained_legally)','$($_.where_obtained)','$($_.weapon_type)','$($_.weapon_details)','$($_.race)','$($_.gender)','$($_.sources)','$($_.mental_health_sources)','$($_.sources_additional_age)','$($_.latitude)','$($_.longitude)','$($_.type)','$($_.year)')"
+        $MJ_Query
+        # Send SQL query to SQLite DB
+        Invoke-SqliteQuery -Connection $Connection -Query $MJ_Query
+    }
+# Close the connection
+$Connection.Close()
+
+
+
+# HTML Export of the data. Will popup once script is completed.
 New-HTML {
-    New-HTMLTable -DataTable $data -Title 'Table of records' -HideFooter -PagingLength 200 -Buttons excelHtml5, searchPanes
+    New-HTMLTable -DataTable $Data -Title 'Table of records' -HideFooter -PagingLength 200 -Buttons excelHtml5, searchPanes
 } -ShowHTML -FilePath $ExportWebView -Online
 
