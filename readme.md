@@ -16,18 +16,19 @@
 
 I started this project after multiple mass shootings were covered in the news. The media companies and government agencies are not on the same page when it comes to reporting statistical information about mass shooting. One reason why this topic is difficult to share stats for is because defining what a mass shooting is appears to be controversial, but it really shouldn't be. The other reason is no one shares their record sources used to provide statistics about. 
 
-After conducting an extensive research to align on the definition of a mass shooting is for this project. I was able to locate 1 definition of a mass shooting which was posted by the FBI on their .gov site a good while back. Still not sure why 1 government agency would define it and no other government agency or media adheres to it and instead creating their own definition.
+After conducting an extensive research to align on the definition of a mass shooting is for this project. I was able to locate 1 definition of a mass shooting which was posted by the [National Center for Victims of Crime](https://ovc.ojp.gov/sites/g/files/xyckuh226/files/ncvrw2018/info_flyers/fact_sheets/2018NCVRW_MassCasualty_508_QC.pdf) ("VOC"). According to the VOC, the definition for a mass shooting is 3+ victims (excluding other crimes that include gun violence). Before 2013 a mass shooting definition was 4 victims, but the agency lowered it to 3. 
 
-According to the FBI and the Victims of National Crime the [mass shooting threshold was changed in 2013, down from 4 victims to 3](https://ovc.ojp.gov/sites/g/files/xyckuh226/files/ncvrw2018/info_flyers/fact_sheets/2018NCVRW_MassCasualty_508_QC.pdf) to qualify for a mass shooting. This also exclude normal criminal gun violence.
+This is what VOC had to say about the Mother Jones dataset "***USA Today recorded more than 350 mass shootings between 
+2006 and 2017, while Mother Jones has recorded 95 since 1982. This fact 
+sheet presents data published by Mother Jones, as it is kept current and 
+most closely follows the federal agency definitions.***"
+
+Still not sure why 1 government agency would define it and no other government agency or media adheres to it and instead creating their own definition.
 
 I chose the [Mother Jones](https://www.motherjones.com/) data for this
 
-- Follows the same definition provided by the FBI.
-- Office of Justice Programs: The National Center for Victims of Crime [references Mother Jones](https://ovc.ojp.gov/sites/g/files/xyckuh226/files/ncvrw2018/info_flyers/fact_sheets/2018NCVRW_MassCasualty_508_QC.pdf) as well. 
-  - *USA Today recorded more than 350 mass shootings between 
-2006 and 2017, while Mother Jones has recorded 95 since 1982. This fact 
-sheet presents data published by Mother Jones, as it is kept current and 
-most closely follows the federal agency definitions.*
+- Follows the same definition provided by the VOC
+- VOC utilizes the Mother Jones dataset for gun violence statistics. 
 - Media reports are reviewed and only those that meet the definition are added.
 - Data is updated regularly and publically Available to download as a CSV.
 
