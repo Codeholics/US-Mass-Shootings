@@ -688,6 +688,6 @@ Push-CHSQLite -DBPath $DBPath -CSVPath $ExportCHEdition -SQLitePath $SQLitePath 
 Push-CHSQLite -DBPath $DBPath -CSVPath $ImportCSVPath -SQLitePath $SQLitePath -CPSScriptRoot $CPSScriptRoot -TableName 'MJData'
 
 New-HTML {
-    New-HTMLTable -DataTable $data -Title 'Table with Users' -HideFooter -PagingLength 200 -Buttons excelHtml5, searchPanes
+    New-HTMLTable -DataTable $data -Title 'Table of records' -HideFooter -PagingLength 200 -Buttons excelHtml5, searchPanes
 } -ShowHTML -FilePath $ExportWebView -Online
 
