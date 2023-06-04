@@ -50,10 +50,10 @@ The manual process was automated using PowerShell, so we can ensure the same cha
    2. Rename duplicate header "location"
    3. Column fixing as a whole (trim, split, force case)
    4. Update data to include records updates
-   5. Export CSVs
+   5. Add Mother Jones Dataset and Codeholics version to SQLite database (record ID's are created starting with the oldest record).
+   6. Export CSVs
 2. Upload to Data.World
 
-I have a second process that takes the CSVs and imports the data into a SQLite file. I created record ID's that start with the first mass shooting that is recorded. 
 
 <br>
 

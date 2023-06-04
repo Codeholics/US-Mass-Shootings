@@ -1,17 +1,20 @@
 Import-Module -Name PSWriteHTML, PSSQLite
 
-$CPSScriptRoot = 'C:\Code\Mass Shooter Database'
+$CPSScriptRoot = 'D:\Github\Repos\US-Mass-Shootings'
 
 . "$CPSScriptRoot\Functions\Get-MotherJonesDB.ps1"
 . "$CPSScriptRoot\Functions\New-SQLiteDB.ps1"
 . "$CPSScriptRoot\Functions\Push-CHSQLite.ps1"
 . "$CPSScriptRoot\Functions\Push-MJSQLite.ps1"
 
-$SQLitePath = "$CPSScriptRoot\Resources\System.Data.SQLite.dll"
-$DBPath = "$CPSScriptRoot\Export\MassShooterDatabase.sqlite"
+$Date = Get-Date -Format "yyyyMMdd"
+$Random = Get-Random
+$ExportPath = "$CPSScriptRoot\Export\$Date-$Random"
 
-$ExportPath = "$CPSScriptRoot\Export"
-$ExportWebView = "$CPSScriptRoot\Export\WebView.html"
+$SQLitePath = "$CPSScriptRoot\Resources\System.Data.SQLite.dll"
+$DBPath = "$ExportPath\MassShooterDatabase.sqlite"
+
+$ExportWebView = "$ExportPath\WebView.html"
 $ExportCHEdition = "$ExportPath\thebleak13s1.csv"
 $ImportCSVPath = "$ExportPath\Mother Jones - Mass Shootings Database 1982-2023.csv"
 
