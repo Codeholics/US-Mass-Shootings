@@ -53,7 +53,7 @@ The manual process was automated using PowerShell, so we can ensure the same cha
    5. Export CSVs
 2. Upload to Data.World
 
-I have a second process that takes the CSVs and imports the data into a SQLite file.
+I have a second process that takes the CSVs and imports the data into a SQLite file. I created record ID's that start with the first mass shooting that is recorded. 
 
 <br>
 
