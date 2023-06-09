@@ -1,13 +1,11 @@
 Import-Module -Name PSWriteHTML, PSSQLite
 
 # Root folder of the script
-$CPSScriptRoot = 'D:\Github\Repos\US-Mass-Shootings'
+$CPSScriptRoot = 'D:\Code\Repos\US-Mass-Shootings'
 
 # Importing functions
 . "$CPSScriptRoot\Functions\Get-MotherJonesDB.ps1"
 . "$CPSScriptRoot\Functions\New-SQLiteDB.ps1"
-#. "$CPSScriptRoot\Functions\Push-CHSQLite.ps1"
-#. "$CPSScriptRoot\Functions\Push-MJSQLite.ps1"
 
 # Variables
 $Date = Get-Date -Format "yyyyMMdd"
@@ -678,6 +676,12 @@ $data[$rowIndex83].sources = "https://www.cnn.com/us/live-news/michigan-state-un
 $data[$rowIndex83].mental_health_sources = "https://abcnews.go.com/US/anthony-mcrae-suspected-michigan-state-shooter/story?id=97195504"
 $data[$rowIndex83].changes = "Added new sources cnn, abcnews, nytimes, etc to help confirm and update data on mental health isssues, weapon details, weapon type. "
 #$data[$rowIndex83]
+
+# RowIndex84
+$rowIndex84 = [array]::IndexOf($data.summary,"Audrey Hale, 28, who was a former student at the private Covenant School (pre-school; K-6), killed three adults and three 9-year-old children, before being shot dead by responding police.")
+$data[$rowIndex84].gender = "TM"
+$data[$rowIndex84].changes = "Updated gender to be consistant (TM Trans Male). Old value was F (identifies as transgender and Audrey Hale is a biological woman who, on a social media profile, used male pronouns,? according to Nashville Metro PD officials)"
+#$data[$rowIndex84]
 
 # Remove CH Edition if it exists
 if (test-path $ExportCHEdition) {Remove-Item $ExportCHEdition}
