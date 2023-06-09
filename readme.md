@@ -46,6 +46,7 @@ We no longer manually update the spreadsheet, as the modifications are now autom
 
 - [PSWriteHTML](https://www.powershellgallery.com/packages/PSWriteHTML/0.0.189)
 - [PSSQLite](https://www.powershellgallery.com/packages/PSSQLite/1.1.0)
+- [PSLogging](https://www.powershellgallery.com/packages/PSLogging/2.5.2)
 
 It is not required, but I found it best to review the data in the SQLite file by using [DB Browser (SQLite)](https://sqlitebrowser.org/).
 
