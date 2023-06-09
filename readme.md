@@ -80,4 +80,5 @@ All artifacts after running the script can be found in the `/Export` folder.
 - [Codeholics: Mother Jones US Mass Shootings 1982-2023](https://data.world/thebleak/thebleak13s1)
 - [US Mass Shootings, 1982–2023: Data From Mother Jones’ Investigation](https://www.motherjones.com/politics/2012/12/mass-shootings-mother-jones-full-data/)
 - [National Center for Victims of Crime - Mass shooter PDF](https://ovc.ojp.gov/sites/g/files/xyckuh226/files/ncvrw2018/info_flyers/fact_sheets/2018NCVRW_MassCasualty_508_QC.pdf)
+- [Analysis of Recent Mass Shootings](https://www.ojp.gov/ncjrs/virtual-library/abstracts/analysis-recent-mass-shootings)
 
