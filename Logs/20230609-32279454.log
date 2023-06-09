@@ -1,0 +1,107 @@
+***************************************************************************************************
+Started processing at [06/09/2023 10:44:42].
+***************************************************************************************************
+
+Running script version [1.0].
+
+***************************************************************************************************
+
+[06/09/2023 10:44:45] Created Export Folder: [D:\Code\Repos\US-Mass-Shootings\Export\20230609-32279454]
+[06/09/2023 10:44:48] Mother Jones CSV copied to: [D:\Code\Repos\US-Mass-Shootings\Export\20230609-32279454]
+[06/09/2023 10:44:48] Mother Jones CSV imported from: [D:\Code\Repos\US-Mass-Shootings\Export\20230609-32279454\Mother Jones - Mass Shootings Database 1982-2023.csv]
+[06/09/2023 10:44:49] Starting column data correction loop
+[06/09/2023 10:44:50] Record Update 1
+[06/09/2023 10:44:52] Record Update 2
+[06/09/2023 10:44:53] Record Update 3
+[06/09/2023 10:44:55] Record Update 4
+[06/09/2023 10:44:56] Record Update 5
+[06/09/2023 10:44:57] Record Update 6
+[06/09/2023 10:44:59] Record Update 7
+[06/09/2023 10:45:00] Record Update 8
+[06/09/2023 10:45:02] Record Update 9
+[06/09/2023 10:45:04] Record Update 10
+[06/09/2023 10:45:05] Record Update 11
+[06/09/2023 10:45:06] Record Update 12
+[06/09/2023 10:45:08] Record Update 13
+[06/09/2023 10:45:09] Record Update 14
+[06/09/2023 10:45:10] Record Updated 15
+[06/09/2023 10:45:12] Record Updated 16
+[06/09/2023 10:45:13] Record Updated 17
+[06/09/2023 10:45:15] Record Updated 18
+[06/09/2023 10:45:16] Record Updated 19
+[06/09/2023 10:45:18] Record Updated 20
+[06/09/2023 10:45:19] Record Updated 21
+[06/09/2023 10:45:21] Record Updated 22
+[06/09/2023 10:45:23] Record Updated 23
+[06/09/2023 10:45:25] Record Updated 24
+[06/09/2023 10:45:26] Record Updated 25
+[06/09/2023 10:45:28] Record Updated 26
+[06/09/2023 10:45:29] Record Updated 27
+[06/09/2023 10:45:31] Record Updated 28
+[06/09/2023 10:45:32] Record Updated 29
+[06/09/2023 10:45:34] Record Updated 30
+[06/09/2023 10:45:35] Record Updated 31
+[06/09/2023 10:45:37] Record Updated 32
+[06/09/2023 10:45:39] Record Updated 33
+[06/09/2023 10:45:40] Record Updated 34
+[06/09/2023 10:45:42] Record Updated 35
+[06/09/2023 10:45:43] Record Updated 36
+[06/09/2023 10:45:45] Record Updated 37
+[06/09/2023 10:45:46] Record Updated 38
+[06/09/2023 10:45:48] Record Updated 39
+[06/09/2023 10:45:49] Record Updated 40
+[06/09/2023 10:45:51] Record Updated 41
+[06/09/2023 10:45:52] Record Updated 42
+[06/09/2023 10:45:54] Record Updated 43
+[06/09/2023 10:45:55] Record Updated 44
+[06/09/2023 10:45:57] Record Updated 45
+[06/09/2023 10:45:58] Record Updated 46
+[06/09/2023 10:46:00] Record Updated 47
+[06/09/2023 10:46:01] Record Updated 48
+[06/09/2023 10:46:03] Record Updated 49
+[06/09/2023 10:46:04] Record Updated 50
+[06/09/2023 10:46:06] Record Updated 51
+[06/09/2023 10:46:08] Record Updated 52
+[06/09/2023 10:46:09] Record Updated 53
+[06/09/2023 10:46:11] Record Updated 54
+[06/09/2023 10:46:12] Record Updated 55
+[06/09/2023 10:46:14] Record Updated 56
+[06/09/2023 10:46:15] Record Updated 57
+[06/09/2023 10:46:17] Record Updated 58
+[06/09/2023 10:46:18] Record Updated 59
+[06/09/2023 10:46:20] Record Updated 60
+[06/09/2023 10:46:21] Record Updated 61
+[06/09/2023 10:46:22] Record Updated 62
+[06/09/2023 10:46:24] Record Updated 63
+[06/09/2023 10:46:25] Record Updated 64
+[06/09/2023 10:46:27] Record Updated 65
+[06/09/2023 10:46:29] Record Updated 66
+[06/09/2023 10:46:30] Record Updated 67
+[06/09/2023 10:46:32] Record Updated 68
+[06/09/2023 10:46:33] Record Updated 69
+[06/09/2023 10:46:35] Record Updated 70
+[06/09/2023 10:46:37] Record Updated 71
+[06/09/2023 10:46:38] Record Updated 72
+[06/09/2023 10:46:40] Record Updated 73
+[06/09/2023 10:46:41] Record Updated 74
+[06/09/2023 10:46:43] Record Updated 75
+[06/09/2023 10:46:45] Record Updated 76
+[06/09/2023 10:46:46] Record Updated 77
+[06/09/2023 10:46:48] Record Updated 78
+[06/09/2023 10:46:49] Record Updated 79
+[06/09/2023 10:46:51] Record Updated 80
+[06/09/2023 10:46:52] Record Updated 81
+[06/09/2023 10:46:54] Record Updated 82
+[06/09/2023 10:46:55] Record Updated 83
+[06/09/2023 10:46:58] Exporting clean CH Edition dataset for data.world [D:\Code\Repos\US-Mass-Shootings\Export\20230609-32279454\thebleak13s1.csv]
+[06/09/2023 10:46:59] SQLite DB Created [D:\Code\Repos\US-Mass-Shootings\Resources\System.Data.SQLite.dll]
+[06/09/2023 10:46:59] Connected to SQLite DB [D:\Code\Repos\US-Mass-Shootings\Export\20230609-32279454\MassShooterDatabase.sqlite]
+[06/09/2023 10:47:00] Importing CH Edition [D:\Code\Repos\US-Mass-Shootings\Export\20230609-32279454\thebleak13s1.csv]
+[06/09/2023 10:47:00] Inserting CH Edition [D:\Code\Repos\US-Mass-Shootings\Export\20230609-32279454\thebleak13s1.csv] into SQLite DB [D:\Code\Repos\US-Mass-Shootings\Export\20230609-32279454\MassShooterDatabase.sqlite]
+[06/09/2023 10:47:08] Importing MJ Edition [D:\Code\Repos\US-Mass-Shootings\Export\20230609-32279454\Mother Jones - Mass Shootings Database 1982-2023.csv]
+[06/09/2023 10:47:08] Inserting MJ Edition [D:\Code\Repos\US-Mass-Shootings\Export\20230609-32279454\Mother Jones - Mass Shootings Database 1982-2023.csv] into SQLite DB [D:\Code\Repos\US-Mass-Shootings\Export\20230609-32279454\MassShooterDatabase.sqlite]
+[06/09/2023 10:47:16] Exported WebView [D:\Code\Repos\US-Mass-Shootings\Export\20230609-32279454\WebView.html]
+
+***************************************************************************************************
+Finished processing at [06/09/2023 10:47:16].
+***************************************************************************************************
