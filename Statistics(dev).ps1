@@ -31,6 +31,9 @@ function Get-Statistics{
 
 $STATS_TotalRecords = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Average Age.sql"
 
+# Average Age
+$STATS_AverageAge = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Average Age.sql"
+
 # how mental health plays a role
 $STATS_MentalHealthRole = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - How Mental Health Plays A Role.sql"
 $STATS_MentalHealthRole_Yes = $STATS_MentalHealthRole | where {$_.prior_signs_mental_health_issues2 -eq "Yes"}
@@ -48,9 +51,13 @@ $STATS_WeaponCombos = Get-Statistics -Connection $connection -QueryPath "$CPSScr
 
 
 $OutPut = "@
-- Total Number of Shootings: [$($STATS_TotalRecords.recordcount)]
+# Statistics
 
-# Shooters with mental health issues:
+## General Statistics
+- Total Number of Shootings: [$($STATS_TotalRecords.recordcount)]
+- Average Age of Shooters: [$($STATS_AverageAge.Average)]
+
+## Shooters with mental health issues:
 - Shooters with Mental Health issues were involved in [$($STATS_MentalHealthRole_Yes.shootings)] shootings with a percentage of [$($STATS_MentalHealthRole_Yes.percentage)%] of all mass shootings.
 - The Mother Jones database does not include data for [$($STATS_MentalHealthRole_Missing.shootings)] which is [$($STATS_MentalHealthRole_Missing.Percentage)%] of all mass shootings.
 - A total of [$($STATS_MentalHealthRole_No.shootings)] mass shootings did not involve a shooter with mental health issues which is [$($STATS_MentalHealthRole_No.Percentage)%] of all mass shootings.
