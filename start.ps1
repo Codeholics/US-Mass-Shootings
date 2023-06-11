@@ -10,7 +10,7 @@ $CPSScriptRoot = 'D:\Code\Repos\US-Mass-Shootings'
 # Variables
 $Date = Get-Date -Format "yyyyMMdd"
 $Random = Get-Random
-$ExportPath = "$CPSScriptRoot\Export\$Date-$Random"
+$ExportPath = "$CPSScriptRoot\Export\"
 
 # SQLite Variables
 $SQLitePath = "$CPSScriptRoot\Resources\System.Data.SQLite.dll"
@@ -18,7 +18,7 @@ $DBPath = "$ExportPath\MassShooterDatabase.sqlite"
 
 # Import and Export FileName Variables
 $ExportWebView = "$ExportPath\WebView.html"
-$ExportCHEdition = "$ExportPath\thebleak13s1.csv"
+$ExportCHEdition = "$ExportPath\Codeholics - Mass Shootings Database 1982-2023.csv"
 $ImportCSVPath = "$ExportPath\Mother Jones - Mass Shootings Database 1982-2023.csv"
 
 # Log Variables
@@ -38,6 +38,8 @@ if (!(Test-Path $ExportPath)) {
     New-Item -Path $ExportPath -ItemType Directory
     Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Created Export Folder: [$ExportPath]" -ToScreen
 }elseif (Test-Path $ExportPath) {
+    Remove-Item -Path $ExportPath -Recurse -Force
+    New-Item -Path $ExportPath -ItemType Directory
     Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Export Folder: [$ExportPath] already exists" -ToScreen
 }
 
