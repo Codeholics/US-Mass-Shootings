@@ -20,7 +20,7 @@ function Get-Statistics{
     $query = Get-Content $QueryPath -Raw
 
     # Execute the query and store the results in a variable
-    $results = Invoke-SqliteQuery -Connection $connection -Query $query #-verbose
+    $results = Invoke-SqliteQuery -Connection $connection -Query $query -verbose
 
     # Display the results
     $results
@@ -49,7 +49,10 @@ $STATS_MentalHealthRole_Revolver = $STATS_NumTimeWeaponUsed | Where-Object {$_.w
 $STATS_MentalHealthRole_Derringer = $STATS_NumTimeWeaponUsed | Where-Object {$_.weapon_type -eq "derringer"}
 $STATS_MentalHealthRole_Knife = $STATS_NumTimeWeaponUsed | where-Object {$_.weapon_type -eq "knife"}
 
+# Location Type
 $STATS_LocationType = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Location Type.sql"
+
+
 $STATS_Depression = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Mental Health Depression.sql"
 $STATS_LocationsCity = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Shooting Locations (City).sql"
 $STATS_LocationState = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Shooting Locations (state).sql"
