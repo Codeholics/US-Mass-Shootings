@@ -27,7 +27,7 @@ However, the original Mother Jones dataset had a few issues that were addressed 
 
 # Changes To Original Data
 
-The original dataset used in this project had some inconsistencies, including headers and capitalization errors. Upon closer inspection, it was also found that some of the columns lacked data consistency, and some data was missing but available in the sources. One such column, "weapon_type," required multiple changes to ensure consistent data structure.
+The original dataset used in this project had some inconsistencies, including headers and capitalization errors. Upon closer inspection, it was also found that some columns lacked data consistency, and some data was missing but available in the sources. One such column, "weapon_type," required multiple changes to ensure consistent data structure.
 
 To address these issues, we have automated the process using PowerShell. This allows us to ensure consistency in the changes made to the dataset while being transparent about what was modified. The PowerShell script includes the following steps:
 
@@ -56,8 +56,8 @@ It is not required, but I found it best to review the data in the SQLite file by
 # Executing The Script
 
 1. Download the source code from the project `https://github.com/Codeholics/US-Mass-Shootings.git`
-2. Update the variable `$CPSScriptRoot` in `dataworld.ps1` to be the path to the Repo project folder you created with step 1.
-3. Execute `dataworld.ps1`
+2. Update the variable `$CPSScriptRoot` in `start.ps1` to be the path to the Repo project folder you created with step 1.
+3. Execute `start.ps1`
 
 <br>
 
@@ -65,12 +65,12 @@ It is not required, but I found it best to review the data in the SQLite file by
 
 All artifacts after running the script can be found in the `/Export` folder.
 
-|Path|Purpose|
-|---|---|
-|Mother Jones Raw.csv|The Mother Jones dataset, in its original form, is provided without any modifications. However, it should be noted that the CSV file contains duplicate headers, which renders it unsuitable for direct use in this project.|
-|Mother Jones - Mass Shootings Database 1982-2023.csv|The duplicated header in the `Mother Jones Raw.csv` file has been corrected to ensure that the dataset can be used accurately and efficiently in this project.|
-|thebleak13s1.csv|Final report after data changes made by `dataworld.ps1`.
-|MassShooterDatabase.sqlite|The final results of this project have been stored in a SQLite database, which includes both the original dataset from Mother Jones and the Codeholics Edition. This database serves as a reliable and efficient resource for data scientists seeking to analyze and report on mass shootings. To facilitate the use of the database, sample statistics queries have been provided in the `/SQL` folder. These queries offer a useful starting point for data scientists seeking to conduct statistical analyses on mass shootings data.|
+Path|Purpose
+---|---
+|Mother Jones Raw.csv   |   The Mother Jones dataset, in its original form, is provided without any modifications. However, it should be noted that the CSV file contains duplicate headers, which renders it unsuitable for direct use in this project.
+|   Mother Jones - Mass Shootings Database 1982-2023.csv    |   The duplicated header in the `Mother Jones Raw.csv` file has been corrected to ensure that the dataset can be used accurately and efficiently in this project.|
+|   Codeholics - Mass Shootings Database 1982-2023.csv   |   Final report after data changes made by `dataworld.ps1`.
+|   MassShooterDatabase.sqlite |   The final results of this project have been stored in a SQLite database, which includes both the original dataset from Mother Jones and the Codeholics Edition. This database serves as a reliable and efficient resource for data scientists seeking to analyze and report on mass shootings. To facilitate the use of the database, sample statistics queries have been provided in the `/SQL` folder. These queries offer a useful starting point for data scientists seeking to conduct statistical analyses on mass shootings data.    |
 
 <br>
 
