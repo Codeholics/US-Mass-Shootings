@@ -270,13 +270,13 @@ $STATS_ShootingsPerYear = Get-Statistics -Connection $connection -QueryPath "$CP
 $OutPut = "@
 - [Statistics](#statistics)
   - [General Statistics](#general-statistics)
-  - [Shooters with Mental Health Issues](#shooters-with-mental-health-issues)
-  - [Number of Times a Weapon Type is Used in a Mass Shooting](#number-of-times-a-weapon-type-is-used-in-a-mass-shooting)
+  - [Shootings Per Year](#shootings-per-year)
   - [Location Type](#location-type)
   - [Location City](#location-city)
   - [Location State](#location-state)
+  - [Shooters with Mental Health Issues](#shooters-with-mental-health-issues)
+  - [Number of Times a Weapon Type is Used in a Mass Shooting](#number-of-times-a-weapon-type-is-used-in-a-mass-shooting)
   - [Weapon Combos](#weapon-combos)
-  - [Shootings Per Year](#shootings-per-year)
 
 # Statistics
 
