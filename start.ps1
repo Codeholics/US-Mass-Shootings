@@ -788,6 +788,13 @@ $data[$rowIndex83].mental_health_sources = "https://abcnews.go.com/US/anthony-mc
 $data[$rowIndex83].changes = "Added new sources cnn, abcnews, nytimes, etc to help confirm and update data on mental health isssues, weapon details, weapon type. "
 #$data[$rowIndex83]
 
+# RowIndex84
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 84" -ToScreen
+$rowIndex84 = [array]::IndexOf($data.summary,'Sergio Valencia del Toro, 27, in what officials say was a random act, shot and killed three people including an 11-year-old girl before turning the gun on himself.')
+$Data[$rowIndex84].weapon_type = "Two handguns"
+$Data[$rowIndex84].changes = "Updated weapon_type because original value contained a newline which broke statistics.md output."
+#$Data[$rowIndex84]
+
 #Export clean dataset for data.world
 Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Exporting clean CH Edition dataset for data.world [$ExportCHEdition]" -ToScreen
 $Data | Export-CSV -path $ExportCHEdition -NoTypeInformation
