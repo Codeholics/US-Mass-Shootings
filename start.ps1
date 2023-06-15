@@ -1079,6 +1079,13 @@ $Data[$RowIndex124].weapon_type = "Two rifles, two semiautomatic handguns, three
 $Data[$RowIndex124].changes = "Updated weapon_type to be consistant with other records."
 #$Data[$RowIndex124]
 
+# RowIndex125
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 125" -ToScreen
+$RowIndex125 = [array]::IndexOf($data.case,'United States Postal Service shooting')
+$Data[$RowIndex125].prior_signs_mental_health_issues = 'Unclear'
+$Data[$RowIndex125].changes = "Updated prior_signs_mental_health_issues, removing a space after the word 'Unclear'"
+#$Data[$RowIndex125]
+
 #Export clean dataset for data.world
 Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Exporting clean CH Edition dataset for data.world [$ExportCHEdition]" -ToScreen
 $Data | Export-CSV -path $ExportCHEdition -NoTypeInformation
