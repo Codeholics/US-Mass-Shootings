@@ -193,8 +193,9 @@ $data[$rowIndex2].changes = "Updated weapon type to be more consistant"
 
 # RowIndex3
 Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Update 3" -ToScreen
-$rowIndex3 = [array]::IndexOf($data.summary,"Audrey Hale, 28, who was a former student at the private Covenant School (pre-school; K-6), killed three adults and three 9-year-old children, before being shot dead by responding police.")
+$rowIndex3 = [array]::IndexOf($data.summary,'Audrey Hale, 28, who was a former student at the private Covenant School (pre-school; K-6), killed three adults and three 9-year-old children, before being shot dead by responding police.')
 $data[$rowIndex3].gender = "TM"
+$Data[$RowIndex3].weapon_type = "One semiautomatic rifle, one semiautomatic handgun"
 $data[$rowIndex3].changes = "Updated gender to be consistant (TM Trans Male). Old value was F (identifies as transgender and Audrey Hale is a biological woman who, on a social media profile, used male pronouns,? according to Nashville Metro PD officials)"
 #$data[$rowIndex3]
 
@@ -295,7 +296,8 @@ $data[$rowIndex16].changes = "Updated weapon type to be more consistant"
 Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 17" -ToScreen
 $rowIndex17 = [array]::IndexOf($data.summary,'Army Specialist Ivan Lopez, 34, opened fire at the Fort Hood Army Post in Texas, killing three and wounding at least 12 others before shooting himself in the head after engaging with military police. Lt. Gen. Mark A. Milley told reporters that Lopez "had behavioral health and mental health" issues.')
 $data[$rowIndex17].weapon_type = "One semiautomatic handgun"
-$data[$rowIndex17].changes = "Updated weapon type to be more consistant"
+$data[$rowIndex17].weapons_obtained_legally = "Yes"
+$data[$rowIndex17].changes = "Updated weapon type to be more consistant, removed a new line from weapons_obtained_legally"
 #$data[$rowIndex17]
 
 # RowIndex18
@@ -309,7 +311,8 @@ $data[$rowIndex18].changes = "Updated weapon type to be more consistant. Reviewe
 Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 19" -ToScreen
 $rowIndex19 = [array]::IndexOf($data.summary,'"A man believed to be meeting his three children for a supervised visit at a church just outside Sacramento on Monday afternoon fatally shot the children and an adult accompanying them before killing himself, police officials said. Sheriff Scott Jones of Sacramento County told reporters at the scene that the gunman had a restraining order against him, and that he had to have supervised visits with his children, who were younger than 15." (NYTimes)')
 $data[$rowIndex19].age_of_Shooter = "39"
-$data[$rowIndex19].changes = "Age of shooter found in source link"
+$data[$rowIndex19].weapon_type = "One semiautomatic rifle"
+$data[$rowIndex19].changes = "Age of shooter found in source link. Weapon type updated to be more consistant with other records."
 #$data[$rowIndex19]
 
 # RowIndex20
@@ -369,14 +372,14 @@ $data[$rowIndex26].changes = "Updated weapon type to be more consistant."
 # RowIndex27
 Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 27" -ToScreen
 $rowIndex27 = [array]::IndexOf($data.summary,'Michael McDermott, 42, opened fire on co-workers at Edgewater Technology and was later arrested.')
-$data[$rowIndex27].weapon_type = "One semiautomatic handgun, one semiautomatic rifle, one shotgun"
+$data[$rowIndex27].weapon_type = "One semiautomatic rifle, one shotgun, one semiautomatic handgun"
 $data[$rowIndex27].changes = "Updated weapon type to be more consistant."
 #$data[$rowIndex27]
 
 # RowIndex28
 Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 28" -ToScreen
 $rowIndex28 = [array]::IndexOf($data.case,'Rural Ohio nursing home shooting')
-$data[$rowIndex28].weapon_type = "One handgun, one shotgun"
+$data[$rowIndex28].weapon_type = "One shotgun, one handgun"
 $data[$rowIndex28].changes = "Updated weapon type to be more consistant."
 #$data[$rowIndex28]
 
@@ -391,7 +394,7 @@ $data[$rowIndex29].changes = "Updated weapon type to be more consistant. Updated
 # RowIndex30
 Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 30" -ToScreen
 $rowIndex30 = [array]::IndexOf($data.summary,'Kuwaiti-born Mohammod Youssuf Abdulazeez, 24, a naturalized US citizen, opened fire at a Naval reserve center, and then drove to a military recruitment office where he shot and killed four Marines and a Navy service member, and wounded a police officer and another military service member. He was then fatally shot in an exchange of gunfire with law enforcement officers responding to the attack.')
-$data[$rowIndex30].weapon_type = "Two semiautomatic rifle, one semiautomatic handgun"
+$data[$rowIndex30].weapon_type = "Two semiautomatic rifles, one semiautomatic handgun"
 $data[$rowIndex30].changes = "Updated weapon type based on the information in weapon_details so data is consistant"
 #$data[$rowIndex30]
 
@@ -620,7 +623,7 @@ $data[$rowIndex61].changes = "Updated weapon_type based on the information in we
 
 # RowIndex62
 Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 62" -ToScreen
-$rowIndex62 = [array]::IndexOf($data.sumamry,'Laid-off postal worker Thomas McIlvane, 31, opened fire at his former workplace before committing suicide.')
+$rowIndex62 = [array]::IndexOf($data.case,'Royal Oak postal shootings')
 $data[$rowIndex62].weapon_type = "One semiautomatic rifle"
 $data[$rowIndex62].changes = "Updated weapon_type based on the information in weapon_details so data is consistant"
 #$data[$rowIndex62]
@@ -751,7 +754,7 @@ $data[$rowIndex78].changes = "Updated weapon_type based on the information in we
 # RowIndex79
 Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 79" -ToScreen
 $rowIndex79 = [array]::IndexOf($data.summary,'Jonathan Sapirman, 20, opened fire in a mall food court and was soon shot dead by a 22-year-old armed civilian, whose response local authorities called "nothing short of heroic."')
-$data[$rowIndex79].weapon_type = "Two semiautomatic rifle, one semiautomatic handgun"
+$data[$rowIndex79].weapon_type = "Two semiautomatic rifles, one semiautomatic handgun"
 $data[$rowIndex79].weapon_details = "Sig Sauer M400 rifle, MP15 rifle, Glock 33"
 $data[$rowIndex79].changes = "Updated weapon_type based on the information in weapon_details so data is consistant. Updated weapon details from source links. No mention in source links about any handguns"
 #$data[$rowIndex79]
@@ -794,6 +797,287 @@ $rowIndex84 = [array]::IndexOf($data.summary,'Sergio Valencia del Toro, 27, in w
 $Data[$rowIndex84].weapon_type = "Two handguns"
 $Data[$rowIndex84].changes = "Updated weapon_type because original value contained a newline which broke statistics.md output."
 #$Data[$rowIndex84]
+
+# RowIndex85
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 85" -ToScreen
+$rowIndex85 = [array]::IndexOf($data.case,'Caltrans maintenance yard shooting')
+$Data[$rowIndex85].weapon_type = "One semiautomatic handgun"
+$Data[$rowIndex85].changes = "Updated weapon_type because original value contained a newline which broke statistics.md output."
+#$Data[$rowIndex85]
+
+# RowIndex86
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 86" -ToScreen
+$rowIndex86 = [array]::IndexOf($data.case,'Pennsylvania carwash shooting')
+$Data[$rowIndex86].weapon_type = "One semiautomatic rifle, one semiautomatic handgun"
+$Data[$rowIndex86].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex86]
+
+# RowIndex87
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 87" -ToScreen
+$rowIndex87 = [array]::IndexOf($data.case,'Gilroy garlic festival shooting')
+$Data[$rowIndex87].weapon_type = "One semiautomatic handgun"
+$Data[$rowIndex87].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex87]
+
+# RowIndex88
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 88" -ToScreen
+$rowIndex88 = [array]::IndexOf($data.case,'Marjory Stoneman Douglas High School shooting')
+$Data[$rowIndex88].weapon_type = "One semiautomatic rifle"
+$Data[$rowIndex88].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex88]
+
+# RowIndex89
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 89" -ToScreen
+$rowIndex89 = [array]::IndexOf($data.case,'Mercy Hospital shooting')
+$Data[$rowIndex89].weapon_type = "One semiautomatic handgun"
+$Data[$rowIndex89].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex89]
+
+# RowIndex90
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 90" -ToScreen
+$rowIndex90 = [array]::IndexOf($data.case,'Jersey City kosher market shooting')
+$Data[$rowIndex90].weapon_type = "One semiautomatic rifle, one shotgun, three semiautomatic handguns"
+$Data[$rowIndex90].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex90]
+
+# RowIndex91
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 91" -ToScreen
+$rowIndex91 = [array]::IndexOf($data.case,'Springfield convenience store shooting')
+$Data[$rowIndex91].weapon_type = "One semiautomatic rifle, one semiautomatic handgun"
+$Data[$rowIndex91].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex91]
+
+# RowIndex92
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 92" -ToScreen
+$rowIndex92 = [array]::IndexOf($data.case,'University of Virginia shooting')
+$Data[$rowIndex92].weapon_type = "One semiautomatic handgun"
+$Data[$rowIndex92].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex92]
+
+# RowIndex93
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 93" -ToScreen
+$rowIndex93 = [array]::IndexOf($data.case,'LGBTQ club shooting')
+$Data[$rowIndex93].weapon_type = "One semiautomatic rifle, one semiautomatic handgun"
+$Data[$rowIndex93].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex93]
+
+# RowIndex94
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 94" -ToScreen
+$rowIndex94 = [array]::IndexOf($data.case,'Raleigh spree shooting')
+$Data[$rowIndex94].weapon_type = "One shotgun, one semiautomatic handgun"
+$Data[$rowIndex94].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex94]
+
+# RowIndex95
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 95" -ToScreen
+$rowIndex95 = [array]::IndexOf($data.case,'LA dance studio mass shooting')
+$Data[$rowIndex95].weapon_type = "One semiautomatic rifle"
+$Data[$rowIndex95].weapon_details = "Details pending"
+$Data[$rowIndex95].changes = 'Updated weapon_type to be consistant with other records, Moved "Details pending" to weapon_details.'
+#$Data[$rowIndex95]
+
+# RowIndex96
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 96" -ToScreen
+$rowIndex96 = [array]::IndexOf($data.case,'Louisville bank shooting')
+$Data[$rowIndex96].weapon_type = "One semiautomatic rifle"
+$Data[$rowIndex96].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex96]
+
+# RowIndex97
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 97" -ToScreen
+$rowIndex97 = [array]::IndexOf($data.case,'Texas outlet mall shooting')
+$Data[$rowIndex97].weapon_type = "One semiautomatic rifle"
+$Data[$rowIndex97].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex97]
+
+# RowIndex98
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 98" -ToScreen
+$rowIndex98 = [array]::IndexOf($data.case,'New Mexico neighborhood shooting')
+$Data[$rowIndex98].weapon_type = "One semiautomatic rifle, one semiautomatic handgun"
+$Data[$rowIndex98].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex98]
+
+# RowIndex99
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 99" -ToScreen
+$rowIndex99 = [array]::IndexOf($data.case,'Pinewood Village Apartment shooting')
+$Data[$rowIndex99].weapon_type = "One shotgun, one semiautomatic handgun"
+$Data[$rowIndex99].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex99]
+
+# RowIndex100
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 100" -ToScreen
+$rowIndex100 = [array]::IndexOf($data.case,'Baton Rouge police shooting')
+$Data[$rowIndex100].weapon_type = "One semiautomatic rifle, one semiautomatic handgun"
+$Data[$rowIndex100].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex100]
+
+# RowIndex101
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 101" -ToScreen
+$rowIndex101 = [array]::IndexOf($data.case,'Sandy Hook Elementary massacre')
+$Data[$rowIndex101].weapon_type = "One semiautomatic rifle, one semiautomatic shotgun, two semiautomatic handguns"
+$Data[$rowIndex101].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex101]
+
+# RowIndex102
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 102" -ToScreen
+$rowIndex102 = [array]::IndexOf($data.case,'Alturas tribal shooting')
+$Data[$rowIndex102].weapon_type = "One semiautomatic handgun, one butcher knife"
+$Data[$rowIndex102].changes = "Updated weapon_type to be consistant with other records. (Matches with weapon_details.)"
+#$Data[$rowIndex102]
+
+# RowIndex103
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 103" -ToScreen
+$rowIndex103 = [array]::IndexOf($data.case,'Columbine High School massacre')
+$Data[$rowIndex103].weapon_type = "One semiautomatic rifle, two shotguns, one semiautomatic handgun"
+$Data[$rowIndex103].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex103]
+
+# RowIndex104
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 104" -ToScreen
+$rowIndex104 = [array]::IndexOf($data.case,'Crandon shooting')
+$Data[$rowIndex104].weapon_type = "One semiautomatic rifle"
+$Data[$rowIndex104].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex104]
+
+# RowIndex105
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 105" -ToScreen
+$rowIndex105 = [array]::IndexOf($data.case,'Isla Vista mass murder')
+$Data[$rowIndex105].weapon_type = "Three semiautomatic handguns, two hunting knives"
+$Data[$rowIndex105].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex105]
+
+# RowIndex106
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 106" -ToScreen
+$rowIndex106 = [array]::IndexOf($data.case,"San Ysidro McDonald''s massacre")
+$Data[$rowIndex106].weapon_type = "One semiautomatic rifle, one shotgun, one semiautomatic handgun"
+$Data[$rowIndex106].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$rowIndex106]
+
+# RowIndex107
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 107"
+$RowIndex107 = [array]::IndexOf($data.case,"Northern Illinois University shooting")
+$Data[$RowIndex107].weapon_type = "One shotgun, three semiautomatic handguns"
+$Data[$RowIndex107].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex107]
+
+# RowIndex108
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 108"
+$RowIndex108 = [array]::IndexOf($data.case,"Red Lake massacre")
+$Data[$RowIndex108].weapon_type = "One shotgun, two semiautomatic handguns"
+$Data[$RowIndex108].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex108]
+
+# RowIndex109
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 109" -ToScreen
+$RowIndex109 = [array]::IndexOf($data.case,'Navistar shooting')
+$Data[$RowIndex109].weapon_type = "Two rifles, one shotgun, one revolver"
+$Data[$RowIndex109].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex109]
+
+# RowIndex110
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 110" -ToScreen
+$RowIndex110 = [array]::IndexOf($data.case,'Trolley Square shooting')
+$Data[$RowIndex110].weapon_type = "One shotgun, one revolver"
+$Data[$RowIndex110].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex110]
+
+# RowIndex111
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 111" -ToScreen
+$RowIndex111 = [array]::IndexOf($data.case,'Carthage nursing home shooting')
+$Data[$RowIndex111].weapon_type = "One shotgun, one revolver"
+$Data[$RowIndex111].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex111]
+
+# RowIndex112
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 112" -ToScreen
+$RowIndex112 = [array]::IndexOf($data.case,'ESL shooting')
+$Data[$RowIndex112].weapon_type = "One rifle, one shotgun, two semiautomatic handguns, two revolvers"
+$Data[$RowIndex112].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex112]
+
+# RowIndex113
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 113" -ToScreen
+$RowIndex113 = [array]::IndexOf($data.case,'Thurston High School shooting')
+$Data[$RowIndex113].weapon_type = "One rifle, two semiautomatic handguns"
+$Data[$RowIndex113].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex113]
+
+# RowIndex114
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 114" -ToScreen
+$RowIndex114 = [array]::IndexOf($data.case,'San Francisco UPS shooting')
+$Data[$RowIndex114].weapon_type = "Two semiautomatic handguns"
+$Data[$RowIndex114].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex114]
+
+# RowIndex115
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 115" -ToScreen
+$RowIndex115 = [array]::IndexOf($data.case,'Virginia Beach municipal building shooting')
+$Data[$RowIndex115].weapon_type = "Two semiautomatic handguns"
+$Data[$RowIndex115].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex115]
+
+# RowIndex116
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 116" -ToScreen
+$RowIndex116 = [array]::IndexOf($data.case,'Charleston Church Shooting')
+$Data[$RowIndex116].weapon_type = "One semiautomatic handgun"
+$Data[$RowIndex116].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex116]
+
+# RowIndex117
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 117" -ToScreen
+$RowIndex117 = [array]::IndexOf($data.case,'Fresno downtown shooting')
+$Data[$RowIndex117].weapon_type = "One handgun"
+$Data[$RowIndex117].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex117]
+
+# RowIndex118
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 118" -ToScreen
+$RowIndex118 = [array]::IndexOf($data.case,'Atlanta massage parlor shootings')
+$Data[$RowIndex118].weapon_type = "One semiautomatic handgun"
+$Data[$RowIndex118].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex118]
+
+# RowIndex119
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 119" -ToScreen
+$RowIndex119 = [array]::IndexOf($data.case,'Concrete company shooting')
+$Data[$RowIndex119].weapon_type = "One semiautomatic handgun"
+$Data[$RowIndex119].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex119]
+
+# RowIndex120
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 120" -ToScreen
+$RowIndex120 = [array]::IndexOf($data.case,'Virginia Walmart shooting')
+$Data[$RowIndex120].weapon_type = "One semiautomatic handgun"
+$Data[$RowIndex120].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex120]
+
+# RowIndex121
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 121" -ToScreen
+$RowIndex121 = [array]::IndexOf($data.case,'Half Moon Bay spree shooting')
+$Data[$RowIndex121].weapon_type = "One semiautomatic handgun"
+$Data[$RowIndex121].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex121]
+
+# RowIndex122
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 122" -ToScreen
+$RowIndex122 = [array]::IndexOf($data.case,'Amish school shooting')
+$Data[$RowIndex122].weapon_type = "One rifle, one shotgun, one semiautomatic handgun"
+$Data[$RowIndex122].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex122]
+
+# RowIndex123
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 123" -ToScreen
+$RowIndex123 = [array]::IndexOf($data.case,'Lockheed Martin shooting')
+$Data[$RowIndex123].weapon_type = "Two rifles, one shotgun, one semiautomatic handgun, one derringer"
+$Data[$RowIndex123].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex123]
+
+# RowIndex124
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 124" -ToScreen
+$RowIndex124 = [array]::IndexOf($data.case,'Westside Middle School killings')
+$Data[$RowIndex124].weapon_type = "Two rifles, two semiautomatic handguns, three revolvers, two derringers"
+$Data[$RowIndex124].changes = "Updated weapon_type to be consistant with other records."
+#$Data[$RowIndex124]
 
 #Export clean dataset for data.world
 Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Exporting clean CH Edition dataset for data.world [$ExportCHEdition]" -ToScreen
@@ -884,4 +1168,4 @@ Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Exported WebView [$E
     Write-LogError -LogPath $LogFilePath -Message "[$(Get-Date)] Exporting WebView [$ExportWebView]" -ToScreen
 }
 
-Stop-Log -LogPath $LogFilePath
+Stop-Log -LogPath $LogFilePath -NoExit
