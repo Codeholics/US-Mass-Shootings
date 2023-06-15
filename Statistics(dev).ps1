@@ -252,9 +252,11 @@ $STATS_MentalHealthRoleYesPercentage = $STATS_MentalHealthRole | Where-Object { 
 
 # Number of time a weapon type is used in a mass shooting
 $STATS_NumTimeWeaponUsed = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Number of time a weapon type is used in a mass shooting.sql"
+$STATS_MostCommonWeapon = $STATS_NumTimeWeaponUsed | Sort-Object -Property Count -Descending | Select-Object -First 1
 
 # Location Type
 $STATS_LocationType = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Location Type.sql"
+$STATS_MostCommonLocationType = $STATS_LocationType | Sort-Object -Property Count -Descending | Select-Object -First 1
 
 # Location City
 $STATS_LocationCity = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Shooting Locations (City).sql"
@@ -266,6 +268,7 @@ $STATS_WorstState = $STATS_LocationState | Sort-Object -Property Shootings -Desc
 
 # Weapon Combos
 $STATS_WeaponCombos = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Weapon Type Combos Used.sql"
+$STATS_MostCommonWeaponCombo = $STATS_WeaponCombos | Sort-Object -Property Count -Descending | Select-Object -First 1
 
 # Shootings Per Year
 $STATS_ShootingsPerYear = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Shooting per year.sql"
@@ -301,6 +304,9 @@ $OutPut = "@
 - Worst City: ``$($STATS_WorstCity.location)`` with ``$($STATS_WorstCity.Shootings)`` shootings | ``$($STATS_WorstCity.ShootingPercentage)%``
 - Victims: ``$($FatalityCount.Sum)`` fatalities and ``$($InjuryCount.Sum)`` injuries
 - Shooters with Mental Health Issues: ``$($STATS_MentalHealthRoleYes.shootings)`` | ``$($STATS_MentalHealthRoleYes.Percentage)%``
+- Most Common Location Type: ``$($STATS_MostCommonLocationType.location_2)`` with ``$($STATS_MostCommonLocationType.Count)`` shootings | ``$($STATS_MostCommonLocationType.Percentage)%``
+- Most Used Weapon: ``$($STATS_MostCommonWeapon.weapon_type)`` with ``$($STATS_MostCommonWeapon.Count)`` shootings | ``$($STATS_MostCommonWeapon.Percentage)%``
+- Most Used Weapon Combos: ``$($STATS_MostCommonWeaponCombo.weapon_type)`` with ``$($STATS_MostCommonWeaponCombo.Count)`` shootings | ``$($STATS_MostCommonWeaponCombo.Percentage)%``
 
 ## Shootings Per Year
 
