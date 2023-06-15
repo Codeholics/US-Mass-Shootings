@@ -236,14 +236,19 @@ function Get-Statistics{
     $connection.Close()
 }
 
-$STATS_TotalRecords = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Average Age.sql"
+$STATS_TotalRecords = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - All Records.sql"
+#$STATS_TotalRecords | select-object age_of_Shooter -first 1 
 
 # Average Age
 $STATS_AverageAge = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Average Age.sql"
+$STATS_LowestAge = $STATS_TotalRecords | Sort-Object -Property age_of_Shooter | Select-Object age_of_Shooter
+$STATS_HighestAge = $STATS_TotalRecords | Sort-Object -Property age_of_Shooter -Descending | Select-Object age_of_Shooter -First 1
 
 # how mental health plays a role
 $STATS_MentalHealthRole = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - How Mental Health Plays A Role.sql"
 $STATS_MentalHealthRole_withDepressionCount = (Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Mental Health Depression.sql").summaryCount
+$STATS_MentalHealthRoleYes = $STATS_MentalHealthRole | Where-Object { $_.prior_signs_mental_health_issues2 -eq "Yes" }
+$STATS_MentalHealthRoleYesPercentage = $STATS_MentalHealthRole | Where-Object { $_.MentalHealthRole -eq "Yes" }
 
 # Number of time a weapon type is used in a mass shooting
 $STATS_NumTimeWeaponUsed = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Number of time a weapon type is used in a mass shooting.sql"
@@ -253,9 +258,11 @@ $STATS_LocationType = Get-Statistics -Connection $connection -QueryPath "$CPSScr
 
 # Location City
 $STATS_LocationCity = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Shooting Locations (City).sql"
+$STATS_WorstCity = $STATS_LocationCity | Sort-Object -Property Shootings -Descending | Select-Object -First 1
 
 # Location State
 $STATS_LocationState = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Shooting Locations (state).sql"
+$STATS_WorstState = $STATS_LocationState | Sort-Object -Property Shootings -Descending | Select-Object -First 1
 
 # Weapon Combos
 $STATS_WeaponCombos = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Weapon Type Combos Used.sql"
@@ -263,6 +270,11 @@ $STATS_WeaponCombos = Get-Statistics -Connection $connection -QueryPath "$CPSScr
 # Shootings Per Year
 $STATS_ShootingsPerYear = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Shooting per year.sql"
 $STATS_WorstYear = $STATS_ShootingsPerYear | Sort-Object -Property YearCount -Descending | Select-Object -First 1
+
+# Victims
+$STATS_Victims = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - All Records.sql"
+$FatalityCount = $STATS_Victims | Measure-Object -Property Fatalities -Sum
+$InjuryCount = $STATS_Victims | Measure-Object -Property Injured -Sum
 
 
 $OutPut = "@
@@ -280,10 +292,15 @@ $OutPut = "@
 
 ## General Statistics
 
-- Total Number of Shootings: ``$($STATS_TotalRecords.recordcount)``
+- Total Number of Shootings: ``$($STATS_TotalRecords.count)``
 - Average Age of Shooters: ``$($STATS_AverageAge.Average)``
-- Shooters with Depression ``$($STATS_MentalHealthRole_withDepressionCount)``
+- Age Range: ``$($STATS_LowestAge.age_of_Shooter[1])`` - ``$($STATS_HighestAge.age_of_Shooter)``
+- Shooters with Depression: ``$($STATS_MentalHealthRole_withDepressionCount)``
 - Worst Year: ``$($STATS_WorstYear.Year)`` with ``$($STATS_WorstYear.YearCount)`` shootings
+- Worst State: ``$($STATS_WorstState.State)`` with ``$($STATS_WorstState.Shootings)`` shootings | ``$($STATS_WorstState.ShootingsPercentage)%``
+- Worst City: ``$($STATS_WorstCity.location)`` with ``$($STATS_WorstCity.Shootings)`` shootings | ``$($STATS_WorstCity.ShootingPercentage)%``
+- Victims: ``$($FatalityCount.Sum)`` fatalities and ``$($InjuryCount.Sum)`` injuries
+- Shooters with Mental Health Issues: ``$($STATS_MentalHealthRoleYes.shootings)`` | ``$($STATS_MentalHealthRoleYes.Percentage)%``
 
 ## Shootings Per Year
 
