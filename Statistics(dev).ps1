@@ -262,9 +262,7 @@ $STATS_WeaponCombos = Get-Statistics -Connection $connection -QueryPath "$CPSScr
 
 # Shootings Per Year
 $STATS_ShootingsPerYear = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Shooting per year.sql"
-# $STATS_ShootingsPerYearList = $STATS_ShootingsPerYear | Select-Object Year,YearCount,Victims,VictimsPerShooting,YearCountPercentage | ConvertTo-Markdown
-
-
+$STATS_WorstYear = $STATS_ShootingsPerYear | Sort-Object -Property YearCount -Descending | Select-Object -First 1
 
 
 $OutPut = "@
@@ -285,7 +283,7 @@ $OutPut = "@
 - Total Number of Shootings: ``$($STATS_TotalRecords.recordcount)``
 - Average Age of Shooters: ``$($STATS_AverageAge.Average)``
 - Shooters with Depression ``$($STATS_MentalHealthRole_withDepressionCount)``
-
+- Worst Year: ``$($STATS_WorstYear.Year)`` with ``$($STATS_WorstYear.YearCount)`` shootings
 
 ## Shootings Per Year
 
