@@ -1083,7 +1083,7 @@ $Data[$RowIndex124].changes = "Updated weapon_type to be consistant with other r
 Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 125" -ToScreen
 $RowIndex125 = [array]::IndexOf($data.case,'United States Postal Service shooting')
 $Data[$RowIndex125].prior_signs_mental_health_issues = 'Unclear'
-$Data[$RowIndex125].changes = "Updated prior_signs_mental_health_issues, removing a space after the word 'Unclear'"
+$Data[$RowIndex125].changes = "Updated prior_signs_mental_health_issues, removing a space after the word Unclear"
 #$Data[$RowIndex125]
 
 #Export clean dataset for data.world
