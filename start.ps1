@@ -4,28 +4,30 @@ Import-Module -Name PSWriteHTML, PSSQLite, PSLogging
 $CPSScriptRoot = 'D:\Code\Repos\US-Mass-Shootings'
 
 # Importing functions
-. "$CPSScriptRoot\Functions\Get-MotherJonesDB.ps1"
-. "$CPSScriptRoot\Functions\New-SQLiteDB.ps1"
+$GetMotherJonesDB = Join-Path -Path $CPSScriptRoot -ChildPath 'Functions' | Join-Path -ChildPath 'Get-MotherJonesDB.ps1'
+$NewSQLiteDB = Join-Path -Path $CPSScriptRoot -ChildPath 'Functions' | Join-Path -ChildPath 'New-SQLiteDB.ps1'
+. $GetMotherJonesDB
+. $NewSQLiteDB
 
 # Variables
 $Date = Get-Date -Format "yyyyMMdd"
 $Random = Get-Random
-$ExportPath = "$CPSScriptRoot\Export\"
+$ExportPath = Join-Path -Path $CPSScriptRoot -ChildPath 'Export'
 
 # SQLite Variables
-$SQLitePath = "$CPSScriptRoot\Resources\System.Data.SQLite.dll"
-$DBPath = "$ExportPath\MassShooterDatabase.sqlite"
+$SQLitePath = Join-Path -Path $CPSScriptRoot -ChildPath 'Resources' | Join-Path -ChildPath 'System.Data.SQLite.dll'
+$DBPath = Join-Path -Path $ExportPath -ChildPath 'MassShooterDatabase.sqlite'
 
 # Import and Export FileName Variables
-$ExportWebView = "$ExportPath\WebView.html"
-$ExportCHEdition = "$ExportPath\Codeholics - Mass Shootings Database 1982-2023.csv"
-$ImportCSVPath = "$ExportPath\Mother Jones - Mass Shootings Database 1982-2023.csv"
+$ExportWebView = Join-Path -Path $ExportPath -ChildPath 'WebView.html'
+$ExportCHEdition = Join-Path -Path $ExportPat -ChildPAth 'Codeholics - Mass Shootings Database 1982-2023.csv'
+$ImportCSVPath = Join-Path -Path $ExportPath -ChildPath 'Mother Jones - Mass Shootings Database 1982-2023.csv'
 
 # Log Variables
-$LogPath = "$CPSScriptRoot\Logs"
+$LogPath = Join-Path -Path $CPSScriptRoot -ChildPath 'Logs'
 $LogName = "$Date-$Random.log"
-$LogFilePath = "$LogPath\$LogName"
-$Version = "1.0"
+$LogFilePath = Join-Path -Path $LogPath -ChildPath $LogName
+$Version = "1.1"
 
 # Start Logging
 Start-Log -LogPath $LogPath -LogName $LogName -ScriptVersion $Version
