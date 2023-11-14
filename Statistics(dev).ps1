@@ -237,6 +237,7 @@ function Get-Statistics{
 }
 
 $STATS_TotalRecords = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - All Records.sql"
+$STATS_TotalRecordCount = $STATS_TotalRecords.count
 #$STATS_TotalRecords | select-object age_of_Shooter -first 1 
 
 # Average Age
@@ -279,6 +280,10 @@ $STATS_Victims = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRo
 $FatalityCount = $STATS_Victims | Measure-Object -Property Fatalities -Sum
 $InjuryCount = $STATS_Victims | Measure-Object -Property Injured -Sum
 
+# Military/Government trained
+$STATS_MilGovTrained = Get-Statistics -Connection $connection -QueryPath "$CPSScriptRoot\SQL\CHData - Military and Law Enforcement.sql"
+$MilGovTrainedCount = ($STATS_MilGovTrained | Where-Object {$_.trained -eq 'Y'}).count
+$TrainedPercentage = ($MilGovTrainedCount / $STATS_TotalRecordCount) * 100
 
 $OutPut = "@
 - [Statistics](#statistics)
@@ -307,6 +312,7 @@ $OutPut = "@
 - Most Common Location Type: ``$($STATS_MostCommonLocationType.location_2)`` with ``$($STATS_MostCommonLocationType.Count)`` shootings | ``$($STATS_MostCommonLocationType.Percentage)%``
 - Most Used Weapon: ``$($STATS_MostCommonWeapon.weapon_type)`` with ``$($STATS_MostCommonWeapon.Count)`` shootings | ``$($STATS_MostCommonWeapon.Percentage)%``
 - Most Used Weapon Combos: ``$($STATS_MostCommonWeaponCombo.weapon_type)`` with ``$($STATS_MostCommonWeaponCombo.Count)`` shootings | ``$($STATS_MostCommonWeaponCombo.Percentage)%``
+- Military or Government Training: ``$($MilGovTrainedCount)`` | ``$($TrainedPercentage)%``
 
 ## Shootings Per Year
 
