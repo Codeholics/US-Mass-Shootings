@@ -20,7 +20,7 @@ $DBPath = Join-Path -Path $ExportPath -ChildPath 'MassShooterDatabase.sqlite'
 
 # Import and Export FileName Variables
 $ExportWebView = Join-Path -Path $ExportPath -ChildPath 'WebView.html'
-$ExportCHEdition = Join-Path -Path $ExportPat -ChildPAth 'Codeholics - Mass Shootings Database 1982-2023.csv'
+$ExportCHEdition = Join-Path -Path $ExportPath -ChildPAth 'Codeholics - Mass Shootings Database 1982-2023.csv'
 $ImportCSVPath = Join-Path -Path $ExportPath -ChildPath 'Mother Jones - Mass Shootings Database 1982-2023.csv'
 
 # Log Variables
@@ -163,6 +163,7 @@ foreach($item in $Spreadsheet) {
     $Row | Add-member -membertype NoteProperty -name "weapon_details" -value $weapon_details
     $Row | Add-member -membertype NoteProperty -name "race" -value $Race
     $Row | Add-member -membertype NoteProperty -name "gender" -value $Gender
+    #$Row | Add-member -MemberType NoteProperty -Name "trained" -value $?
     $Row | Add-member -membertype NoteProperty -name "sources" -value $item.sources
     $Row | Add-member -membertype NoteProperty -name "mental_health_sources" -value $mental_health_sources
     $Row | Add-member -membertype NoteProperty -name "sources_additional_age" -value $item.sources_additional_age
