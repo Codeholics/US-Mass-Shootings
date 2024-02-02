@@ -1089,6 +1089,15 @@ $Data[$RowIndex125].prior_signs_mental_health_issues = 'Unclear'
 $Data[$RowIndex125].changes = "Updated prior_signs_mental_health_issues, removing a space after the word Unclear"
 #$Data[$RowIndex125]
 
+# RowIndex126
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Updated 126" -ToScreen
+$rowIndex126 = [array]::IndexOf($data.summary,'Anthony Polito, 67, a former university professor, died in a shootout with police after opening fire on the UNLV campus.')
+$Data[$RowIndex126].weapon_type = "Two semiautomatic handguns"
+$Data[$RowIndex126].weapon_details = "Two 9mm handguns with nine loaded magazines."
+$Data[$RowIndex126].sources = "https://www.nbcnews.com/news/us-news/anthony-polito-s-know-unlv-shooting-suspect-accused-killing-3-wounding-rcna128499; https://www.reviewjournal.com/crime/shootings/police-engaged-suspect-in-shootout-unlv-police-chief-says-2960370/; https://www.cnn.com/2023/12/06/us/university-of-nevada-las-vegas-campus-shooting/index.html; https://news.yahoo.com/authorities-responding-reports-multiple-victims-201320923.html;https://www.cnn.com/2023/12/08/us/university-of-nevada-las-vegas-shooting-friday/index.html;"
+$Data[$RowIndex126].changes = "Added weapon_type which was provided on updated source link from CNN."
+# $Data[$RowIndex126]
+
 #Export clean dataset for data.world
 Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Exporting clean CH Edition dataset for data.world [$ExportCHEdition]" -ToScreen
 $Data | Export-CSV -path $ExportCHEdition -NoTypeInformation
