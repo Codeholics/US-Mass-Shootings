@@ -1,4 +1,4 @@
-- [Codeholics Edition | Mother Jones Mass Shooter Database 1982-2023](#codeholics-edition--mother-jones-mass-shooter-database-1982-2023)
+- [Codeholics Edition | Mother Jones Mass Shooter Database 1982-2024](#codeholics-edition--mother-jones-mass-shooter-database-1982-2024)
 - [Changes To Original Data](#changes-to-original-data)
 - [Dependencies](#dependencies)
 - [Executing The Script](#executing-the-script)
@@ -12,7 +12,7 @@
 
 <br>
 
-# Codeholics Edition | Mother Jones Mass Shooter Database 1982-2023
+# Codeholics Edition | Mother Jones Mass Shooter Database 1982-2024
 
 This project was initiated in response to the lack of consensus among media companies and government agencies regarding statistical reporting on mass shootings. The difficulty in sharing statistics arises from the controversial nature of defining what constitutes a mass shooting, compounded by the fact that record sources are not being shared.
 
