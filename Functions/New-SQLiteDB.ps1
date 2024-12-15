@@ -100,7 +100,7 @@ function New-SQLiteDB {
 
     # Close the connection
     $connection.Close()
-    } 
+} 
     
 <#
     $root = "D:\Github\PowerShell\R AND D\Data World\MJ Mass Shooter Database"

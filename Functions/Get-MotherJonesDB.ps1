@@ -24,7 +24,7 @@ function Get-MotherJonesDB {
         [string]$ExportOG = "$Output\Mother Jones Raw.csv",
 
         [Parameter(Mandatory=$false)]
-        [string]$ExportFixed = "$Output\Mother Jones - Mass Shootings Database 1982-2023.csv"
+        [string]$ExportFixed = "$Output\Mother Jones - Mass Shootings Database 1982-2024.csv"
     )
     #Mother Jones Mass Shooting Database
     #Mother Jones - Mass Shootings Database, 1982 - 2022
