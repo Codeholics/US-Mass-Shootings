@@ -1141,7 +1141,6 @@ $Data[$rowIndex132].changes = "Updated weapon_type to be consistent with other r
 # $Data[$rowIndex132]
 
 
-
 #Export clean dataset for data.world
 Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Exporting clean CH Edition dataset for data.world [$ExportCHEdition]" -ToScreen
 $Data | Export-CSV -path $ExportCHEdition -NoTypeInformation
