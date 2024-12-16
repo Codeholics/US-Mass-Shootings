@@ -171,6 +171,10 @@ foreach($item in $Spreadsheet) {
         $gender = $gender
     }
 
+    if ($souce -like '*;*') {
+        $sources = $sources -replace ';', ','
+    }
+
     # Final Data Array for CH Edition
     $Data += [PSCustomObject]@{
         case = $case
@@ -228,7 +232,7 @@ $data[$rowIndex3].gender = "TM"
 $data[$RowIndex3].weapon_type = "One semiautomatic rifle, one pistol caliber carbine, one semiautomatic handgun"
 $data[$rowIndex3].mental_health_sources = "https://www.nytimes.com/live/2023/03/28/us/nashville-school-shooting-tennessee"
 $data[$rowIndex3].prior_signs_mental_health_issues = "Yes"
-$data[$rowIndex3].mental_health_details = "Police Say Shooter Was Under Doctor's Care for 'Emotional Disorder'"
+$data[$rowIndex3].mental_health_details = "Police Say Shooter Was Under Doctors Care for Emotional Disorder"
 $data[$rowIndex3].weapon_details = "was in possession of an AR-15 military-style rifle, a 9 mm Kel-Tec SUB2000 pistol caliber carbine, and a 9mm Smith and Wesson M&P Shield EZ 2.0 handgun. The AR-15 and 9 mm pistol caliber carbine appear to have 30-round magazines"
 $data[$rowIndex3].sources = "https://www.tennessean.com/story/news/crime/2023/03/27/nashville-mourns-mass-shooting-covenant-school/70052585007/; https://www.wsmv.com/2023/03/27/vumc-3-students-2-adults-dead-police-say-shooter-also-dead-covenant-school/; https://www.washingtonpost.com/nation/2023/03/27/nashville-shooting-covenant-school/; https://www.nytimes.com/live/2023/03/27/us/nashville-shooting-covenant-school; https://www.nytimes.com/article/nashville-school-shooting-tennessee.html; https://www.washingtonpost.com/nation/2023/03/27/nashville-school-shooting/; https://www.kq2.com/news/national/heres-what-we-know-about-the-guns-used-in-the-nashville-school-shooting/"
 $data[$rowIndex3].changes = "Updated gender to be consistent (TM Trans Male). Old value was F (identifies as transgender and Audrey Hale is a biological woman who, on a social media profile, used male pronouns,? according to Nashville Metro PD officials). weapon_type, mental health, and weapon details updated. Added sources."
@@ -1230,21 +1234,21 @@ $MJ_TableName = 'MJData'
 try {
     $MJ_CSV = Import-Csv -Path $ImportCSVPath | Sort-Object -Property {[DateTime]::ParseExact($_.date,'yyyy-MM-dd',$null)}
     Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Importing MJ Edition [$ImportCSVPath]" -ToScreen
-}catch{
+} catch {
     Write-LogError -LogPath $LogFilePath -Message "[$(Get-Date)] Importing MJ Edition [$ImportCSVPath]" -ToScreen
 }
 
-try{
+try {
     Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Inserting MJ Edition [$ImportCSVPath] into SQLite DB [$DBPath]" -ToScreen
     $MJ_CSV | ForEach-Object {
-            # SQL Query to insert records into SQLite DB
-            $MJ_Query = "INSERT INTO $MJ_TableName ([case], location, date, summary, fatalities, injured, total_victims, location_2, age_of_Shooter, prior_signs_mental_health_issues, mental_health_details, weapons_obtained_legally, where_obtained, weapon_type, weapon_details, race, gender, sources, mental_health_sources, sources_additional_age, latitude, longitude, type, year) VALUES 
-            ('$($_.case)','$($_.location)','$($_.date)','$($_.summary)','$($_.fatalities)','$($_.injured)','$($_.total_victims)','$($_.location_2)','$($_.age_of_Shooter)','$($_.prior_signs_mental_health_issues)','$($_.mental_health_details)','$($_.weapons_obtained_legally)','$($_.where_obtained)','$($_.weapon_type)','$($_.weapon_details)','$($_.race)','$($_.gender)','$($_.sources)','$($_.mental_health_sources)','$($_.sources_additional_age)','$($_.latitude)','$($_.longitude)','$($_.type)','$($_.year)')"
-            $MJ_Query
-            # Send SQL query to SQLite DB
-            Invoke-SqliteQuery -Connection $Connection -Query $MJ_Query
+        # SQL Query to insert records into SQLite DB
+        $MJ_Query = "INSERT INTO $MJ_TableName ([case], location, date, summary, fatalities, injured, total_victims, location_2, age_of_Shooter, prior_signs_mental_health_issues, mental_health_details, weapons_obtained_legally, where_obtained, weapon_type, weapon_details, race, gender, sources, mental_health_sources, sources_additional_age, latitude, longitude, type, year) VALUES 
+        ('$($_.case)','$($_.location)','$($_.date)','$($_.summary)','$($_.fatalities)','$($_.injured)','$($_.total_victims)','$($_.location_2)','$($_.age_of_Shooter)','$($_.prior_signs_mental_health_issues)','$($_.mental_health_details)','$($_.weapons_obtained_legally)','$($_.where_obtained)','$($_.weapon_type)','$($_.weapon_details)','$($_.race)','$($_.gender)','$($_.sources)','$($_.mental_health_sources)','$($_.sources_additional_age)','$($_.latitude)','$($_.longitude)','$($_.type)','$($_.year)')"
+        $MJ_Query
+        # Send SQL query to SQLite DB
+        Invoke-SqliteQuery -Connection $Connection -Query $MJ_Query
     }
-}catch{
+} catch {
     Write-LogError -LogPath $LogFilePath -Message "[$(Get-Date)] Inserting MJ Edition [$ImportCSVPath] into SQLite DB [$DBPath]" -ToScreen
 }
 # Close the connection
