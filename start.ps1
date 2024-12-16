@@ -68,7 +68,7 @@ $Data = @()
 foreach($item in $Spreadsheet) {
 
     # Variable Assignments
-    $gender = $item.gender.length
+    $gender = $item.gender
     $type = $item.type
     $mental_health_sources = $item.mental_health_sources
     $age_of_shooter = $item.age_of_shooter
@@ -168,7 +168,7 @@ foreach($item in $Spreadsheet) {
         $gender = 'M/F'
     }else{
         #Do nothing if the value length is 1. (result already "M", "F" or "M/F")
-        $gender
+        $gender = $gender
     }
 
     # Final Data Array for CH Edition
@@ -225,8 +225,13 @@ $data[$rowIndex2].changes = "Updated weapon type to be more consistent"
 Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Record Update 3" -ToScreen
 $rowIndex3 = [array]::IndexOf($data.summary,'Audrey Hale, 28, who was a former student at the private Covenant School (pre-school; K-6), killed three adults and three 9-year-old children, before being shot dead by responding police.')
 $data[$rowIndex3].gender = "TM"
-$Data[$RowIndex3].weapon_type = "One semiautomatic rifle, one semiautomatic handgun"
-$data[$rowIndex3].changes = "Updated gender to be consistent (TM Trans Male). Old value was F (identifies as transgender and Audrey Hale is a biological woman who, on a social media profile, used male pronouns,? according to Nashville Metro PD officials)"
+$data[$RowIndex3].weapon_type = "One semiautomatic rifle, one pistol caliber carbine, one semiautomatic handgun"
+$data[$rowIndex3].mental_health_sources = "https://www.nytimes.com/live/2023/03/28/us/nashville-school-shooting-tennessee"
+$data[$rowIndex3].prior_signs_mental_health_issues = "Yes"
+$data[$rowIndex3].mental_health_details = "Police Say Shooter Was Under Doctor's Care for 'Emotional Disorder'"
+$data[$rowIndex3].weapon_details = "was in possession of an AR-15 military-style rifle, a 9 mm Kel-Tec SUB2000 pistol caliber carbine, and a 9mm Smith and Wesson M&P Shield EZ 2.0 handgun. The AR-15 and 9 mm pistol caliber carbine appear to have 30-round magazines"
+$data[$rowIndex3].sources = "https://www.tennessean.com/story/news/crime/2023/03/27/nashville-mourns-mass-shooting-covenant-school/70052585007/; https://www.wsmv.com/2023/03/27/vumc-3-students-2-adults-dead-police-say-shooter-also-dead-covenant-school/; https://www.washingtonpost.com/nation/2023/03/27/nashville-shooting-covenant-school/; https://www.nytimes.com/live/2023/03/27/us/nashville-shooting-covenant-school; https://www.nytimes.com/article/nashville-school-shooting-tennessee.html; https://www.washingtonpost.com/nation/2023/03/27/nashville-school-shooting/; https://www.kq2.com/news/national/heres-what-we-know-about-the-guns-used-in-the-nashville-school-shooting/"
+$data[$rowIndex3].changes = "Updated gender to be consistent (TM Trans Male). Old value was F (identifies as transgender and Audrey Hale is a biological woman who, on a social media profile, used male pronouns,? according to Nashville Metro PD officials). weapon_type, mental health, and weapon details updated. Added sources."
 #$data[$rowIndex3]
 
 # RowIndex4
