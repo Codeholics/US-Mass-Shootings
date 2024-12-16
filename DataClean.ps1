@@ -69,7 +69,6 @@ foreach ($item in $ImportedMJEdition) {
         $changes = "Updated injured, total_victims, age_of_shooter, weapon_type"
         #Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Updated: $case" -ToScreen
         write-host "[$(Get-Date)] Updated: $case" -foregroundcolor "green"
-
     }
 
     # Final CleanData Array for CH Edition
