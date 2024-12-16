@@ -141,38 +141,37 @@ foreach($item in $Spreadsheet) {
     }else{
         #Do nothing if the value length is 1. (result already "M", "F" or "M/F")
     }
-    
-    #custom csv list building so the location column can be split $item
-    $Row = New-Object psobject
-    $Row | Add-member -membertype NoteProperty -name "case" -value $item.case
-    $Row | Add-member -membertype NoteProperty -name "location" -value $item.location
-    $Row | Add-member -membertype NoteProperty -name "city" -value $City
-    $Row | Add-member -membertype NoteProperty -name "state" -value $State
-    $Row | Add-member -membertype NoteProperty -name "date" -value $item.date
-    $Row | Add-member -membertype NoteProperty -name "summary" -value $item.summary
-    $Row | Add-member -membertype NoteProperty -name "fatalities" -value $item.fatalities
-    $Row | Add-member -membertype NoteProperty -name "injured" -value $item.injured
-    $Row | Add-member -membertype NoteProperty -name "total_victims" -value $item.total_victims
-    $Row | Add-member -membertype NoteProperty -name "location_2" -value $Location_2
-    $Row | Add-member -membertype NoteProperty -name "age_of_Shooter" -value $age_of_shooter
-    $Row | Add-member -membertype NoteProperty -name "prior_signs_mental_health_issues" -value $PriorSignsMentalHealthIssues
-    $Row | Add-member -membertype NoteProperty -name "mental_health_details" -value $mental_health_details
-    $Row | Add-member -membertype NoteProperty -name "weapons_obtained_legally" -value $weapons_obtained_legally
-    $Row | Add-member -membertype NoteProperty -name "where_obtained" -value $where_obtained
-    $Row | Add-member -membertype NoteProperty -name "weapon_type" -value $WeaponType
-    $Row | Add-member -membertype NoteProperty -name "weapon_details" -value $weapon_details
-    $Row | Add-member -membertype NoteProperty -name "race" -value $Race
-    $Row | Add-member -membertype NoteProperty -name "gender" -value $Gender
-    #$Row | Add-member -MemberType NoteProperty -Name "trained" -value $?
-    $Row | Add-member -membertype NoteProperty -name "sources" -value $item.sources
-    $Row | Add-member -membertype NoteProperty -name "mental_health_sources" -value $mental_health_sources
-    $Row | Add-member -membertype NoteProperty -name "sources_additional_age" -value $item.sources_additional_age
-    $Row | Add-member -membertype NoteProperty -name "latitude" -value $latitude
-    $Row | Add-member -membertype NoteProperty -name "longitude" -value $longitude
-    $Row | Add-member -membertype NoteProperty -name "type" -value $item.type
-    $Row | Add-member -membertype NoteProperty -name "year" -value $item.year
-    $Row | Add-member -membertype NoteProperty -name "changes" -value $item.changes
-    $Data += $Row
+
+    # Final Data Array for CH Edition
+    $Data += [PSCustomObject]@{
+        case = $item
+        location = $item.location
+        city = $City
+        state = $State
+        date = $item.date
+        summary = $item.summary
+        fatalities = $item.fatalities
+        injured = $item.injured
+        total_victims = $item.total_victims
+        location_2 = $Location_2
+        age_of_Shooter = $age_of_shooter
+        prior_signs_mental_health_issues = $PriorSignsMentalHealthIssues
+        mental_health_details = $mental_health_details
+        weapons_obtained_legally = $weapons_obtained_legally
+        where_obtained = $where_obtained
+        weapon_type = $WeaponType
+        weapon_details = $weapon_details
+        race = $Race
+        gender = $Gender
+        sources = $item.sources
+        mental_health_sources = $mental_health_sources
+        sources_additional_age = $item.sources_additional_age
+        latitude = $latitude
+        longitude = $longitude
+        type = $item.type
+        year = $item.year
+        changes = $item.changes
+    }
 
 } 
 
