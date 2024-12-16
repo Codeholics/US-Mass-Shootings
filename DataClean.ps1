@@ -1,9 +1,9 @@
 Import-Module ImportExcel
 
-$ImportedCHEdition = Import-csv -Path "D:\Code\Repos\US-Mass-Shootings\Export\Codeholics - Mass Shootings Database 1982-2024.csv"
+$ImportedMJEdition = Import-csv -Path "D:\Code\Repos\US-Mass-Shootings\Export\Mother Jones - Mass Shootings Database 1982-2024.csv"
 
 $CleanData = @()
-foreach ($item in $ImportedCHEdition) {
+foreach ($item in $ImportedMJEdition) {
 
     # Initializations
     $gender = $null
@@ -67,7 +67,9 @@ foreach ($item in $ImportedCHEdition) {
         $age_of_shooter = "45"
         $weapon_type = "One semiautomatic rifle, one semiautomatic handgun"
         $changes = "Updated injured, total_victims, age_of_shooter, weapon_type"
-        #Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] $case - Updated" -ToScreen
+        #Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Updated: $case" -ToScreen
+        write-host "[$(Get-Date)] Updated: $case" -foregroundcolor "green"
+
     }
 
     # Final CleanData Array for CH Edition
@@ -102,4 +104,4 @@ foreach ($item in $ImportedCHEdition) {
     }
 }
 
-$CleanData | where-object {$_.summary -like "Michael Louis, 45, killed four, including two doctors, and took his own life, according to authorities.*"}
+$CleanData | where-object {$_.case -like "Tulsa medical center shooting"} | select-object Injured
