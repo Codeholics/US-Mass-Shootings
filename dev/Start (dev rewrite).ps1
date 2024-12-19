@@ -7,6 +7,9 @@ $CPSScriptRoot = "D:\Code\Repos\US-Mass-Shootings\dev"
     # Function to edit cases
 $EditCases = Join-Path -Path $CPSScriptRoot -ChildPath "Functions" | Join-Path -ChildPath "Edit-Cases.ps1"
 . $EditCases
+    # Function to get the Mother Jones Database 
+$GetMotherJonesDB = Join-Path -Path $CPSScriptRoot -ChildPath 'Functions' | Join-Path -ChildPath 'Get-MotherJonesDB.ps1'
+. $GetMotherJonesDB
 
 # Import the Mother Jones Edition
 #$ImportedMJEdition = Import-csv -Path "D:\Code\Repos\US-Mass-Shootings\Export\Mother Jones - Mass Shootings Database 1982-2024.csv"
