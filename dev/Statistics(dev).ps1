@@ -208,7 +208,7 @@ function New-MDTable {
         }
     }
 
-$CPSScriptRoot = "D:\Code\Repos\US-Mass-Shootings\"
+$CPSScriptRoot = "D:\Code\Repos\US-Mass-Shootings\dev"
 
 Add-Type -Path "$CPSScriptRoot\Resources\System.Data.SQLite.dll"
 
