@@ -13,7 +13,7 @@ $EscapeSQLString = Join-Path -Path $CPSScriptRoot -ChildPath 'Functions' | Join-
 
 # Variables
 $Date = Get-Date -Format "yyyyMMdd"
-$Random = Get-Random
+#$Random = Get-Random
 $ExportPath = Join-Path -Path $CPSScriptRoot -ChildPath 'Export'
 
 # SQLite Variables
@@ -25,7 +25,7 @@ $DBPath = Join-Path -Path $ExportPath -ChildPath 'MassShooterDatabase.sqlite'
 $ExportCHEdition = Join-Path -Path $ExportPath -ChildPAth 'Codeholics - Mass Shootings Database 1982-2024.csv'
 $ImportCSVPath = Join-Path -Path $ExportPath -ChildPath 'Mother Jones - Mass Shootings Database 1982-2024.csv'
 
-# Log Variables
+<# Log Variables
 $LogPath = Join-Path -Path $CPSScriptRoot -ChildPath 'Logs'
 $LogName = "$Date-$Random.log"
 $LogFilePath = Join-Path -Path $LogPath -ChildPath $LogName
@@ -33,6 +33,7 @@ $Version = "2.0"
 
 # Start Logging
 Start-Log -LogPath $LogPath -LogName $LogName -ScriptVersion $Version
+#>
 
 ########################
 ## Test SQL File
@@ -126,7 +127,7 @@ foreach ($item in $CH_CSV) {
 
     try {
         #Invoke-SqliteQuery -Connection $Connection -Query $CH_Query
-        Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Inserted into CH Edition DB: [$_case : $date]" -ToScreen
+        Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Inserted into CH Edition DB: [$case : $date]" -ToScreen
     } catch {
         Write-LogError -LogPath $LogFilePath -Message "[$(Get-Date)] Inserting into CH Edition DB: [$CH_Query]" -ToScreen
     }
@@ -181,7 +182,7 @@ foreach ($item in $MJ_CSV) {
 
     try {
         #Invoke-SqliteQuery -Connection $Connection -Query $MJ_Query
-        Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Inserted into MJ Edition DB: [$_case : $date]" -ToScreen
+        Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Inserted into MJ Edition DB: [$case : $date]" -ToScreen
     } catch {
         Write-LogError -LogPath $LogFilePath -Message "[$(Get-Date)] Inserting into MJ Edition DB: [$MJ_Query]" -ToScreen
     }
