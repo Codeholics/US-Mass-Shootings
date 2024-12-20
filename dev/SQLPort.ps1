@@ -92,7 +92,7 @@ try{
 
 foreach ($item in $CH_CSV) {
     $case = Get-EscapeSQLString $item.case
-    $location = Get-EscapeSQLString $itemlocation
+    $location = Get-EscapeSQLString $item.location
     $city = Get-EscapeSQLString $item.city
     $state = Get-EscapeSQLString $item.state
     $date = Get-EscapeSQLString $item.date
@@ -121,16 +121,18 @@ foreach ($item in $CH_CSV) {
 
     # SQL Query to insert records into SQLite DB
     $CH_Query = "INSERT INTO $CH_TableName ([case], location, city, state, date, summary, fatalities, injured, total_victims, location_2, age_of_Shooter, prior_signs_mental_health_issues, mental_health_details, weapons_obtained_legally, where_obtained, weapon_type, weapon_details, race, gender, sources, mental_health_sources, sources_additional_age, latitude, longitude, type, year, changes) VALUES 
-    ('[$case]','$location','$city','$state','$date','$summary','$fatalities','$injured','$total_victims','$location_2','$age_of_Shooter','$prior_signs_mental_health_issues','$mental_health_details','$weapons_obtained_legally','$where_obtained','$weapon_type','$weapon_details','$race','$gender','$sources','$mental_health_sources','$sources_additional_age','$latitude','$longitude','$type','$year','$changes')"
+    ('$case','$location','$city','$state','$date','$summary','$fatalities','$injured','$total_victims','$location_2','$age_of_Shooter','$prior_signs_mental_health_issues','$mental_health_details','$weapons_obtained_legally','$where_obtained','$weapon_type','$weapon_details','$race','$gender','$sources','$mental_health_sources','$sources_additional_age','$latitude','$longitude','$type','$year','$changes')"
     
     $CH_Query | Out-File -FilePath $CHTestSQLFile -Append
 
     try {
-        #Invoke-SqliteQuery -Connection $Connection -Query $CH_Query
+        Invoke-SqliteQuery -Connection $Connection -Query $CH_Query
         Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Inserted into CH Edition DB: [$case : $date]" -ToScreen
     } catch {
         Write-LogError -LogPath $LogFilePath -Message "[$(Get-Date)] Inserting into CH Edition DB: [$CH_Query]" -ToScreen
     }
+
+    start-sleep -seconds 1
 
 }
 
@@ -150,7 +152,7 @@ try{
 
 foreach ($item in $MJ_CSV) {
     $case = Get-EscapeSQLString $item.case
-    $location = Get-EscapeSQLString $itemlocation
+    $location = Get-EscapeSQLString $item.location
     $date = Get-EscapeSQLString $item.date
     $summary = Get-EscapeSQLString $item.summary
     $fatalities = Get-EscapeSQLString $item.fatalities
@@ -176,16 +178,18 @@ foreach ($item in $MJ_CSV) {
 
     # SQL Query to insert records into SQLite DB
     $MJ_Query = "INSERT INTO $MJ_TableName ([case], location, date, summary, fatalities, injured, total_victims, location_2, age_of_Shooter, prior_signs_mental_health_issues, mental_health_details, weapons_obtained_legally, where_obtained, weapon_type, weapon_details, race, gender, sources, mental_health_sources, sources_additional_age, latitude, longitude, type, year) VALUES 
-    ('[$case]','$location','$date','$summary','$fatalities','$injured','$total_victims','$location_2','$age_of_Shooter','$prior_signs_mental_health_issues','$mental_health_details','$weapons_obtained_legally','$where_obtained','$weapon_type','$weapon_details','$race','$gender','$sources','$mental_health_sources','$sources_additional_age','$latitude','$longitude','$type','$year')"
+    ('$case','$location','$date','$summary','$fatalities','$injured','$total_victims','$location_2','$age_of_Shooter','$prior_signs_mental_health_issues','$mental_health_details','$weapons_obtained_legally','$where_obtained','$weapon_type','$weapon_details','$race','$gender','$sources','$mental_health_sources','$sources_additional_age','$latitude','$longitude','$type','$year')"
     
     $MJ_Query | Out-File -FilePath $MJTestSQLFile -Append
 
     try {
-        #Invoke-SqliteQuery -Connection $Connection -Query $MJ_Query
+        Invoke-SqliteQuery -Connection $Connection -Query $MJ_Query
         Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Inserted into MJ Edition DB: [$case : $date]" -ToScreen
     } catch {
         Write-LogError -LogPath $LogFilePath -Message "[$(Get-Date)] Inserting into MJ Edition DB: [$MJ_Query]" -ToScreen
     }
+
+    start-sleep -seconds 1
 
 }
 
