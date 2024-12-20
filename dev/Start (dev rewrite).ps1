@@ -282,11 +282,14 @@ try {
 # Push data to SQLite DB
 & "$CPSScriptRoot\SQLPort.ps1"
 
+# Generate Statistics.md
+& "$CPSScriptRoot\Statistics.ps1"
+
 # HTML Export of the data. Will popup once script is completed.
 try {
     New-HTML {
         New-HTMLTable -DataTable $Data -Title 'Table of records' -HideFooter -PagingLength 200 -Buttons excelHtml5, searchPanes
-    } -ShowHTML -FilePath $ExportWebView -Online
+    } -FilePath $ExportWebView -Online
     Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Exported WebView [$ExportWebView]" -ToScreen
     }catch{
         Write-LogError -LogPath $LogFilePath -Message "[$(Get-Date)] Exporting WebView [$ExportWebView]" -ToScreen
