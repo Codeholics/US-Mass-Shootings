@@ -71,12 +71,13 @@ function Get-MotherJonesDB {
         $year = $null
 
         # Variable assignments
-        $Summary = $item.summary -replace "'", "''"
-        $MentalHealthDetails = $item.mental_health_details -replace "'", "''"
-        $Case = $item.case -replace "'", "''"
-        $WhereObtained = $item.where_obtained -replace "'", "''"
-        $WeaponDetails = $item.weapon_details -replace "'", "''"
-        $WeaponType = $item.weapon_type -replace "'", "''"
+        $Summary = $item.summary -replace '(\r\n|\r|\n)', ' '
+        $MentalHealthDetails = $item.mental_health_details #-replace "'", "''"
+        $Case = $item.case #-replace "'", "''"
+        $WhereObtained = $item.where_obtained #-replace "'", "''"
+        $WeaponDetails = $item.weapon_details #-replace "'", "''"
+        $WeaponType = $item.weapon_type #-replace "'", "''"
+        $sources = $item.sources -replace '(\r\n|\r|\n)', ' '
         $Date = (Get-Date $item.date).ToString("yyyy-MM-dd")
 
         # Add to $DataFix array
