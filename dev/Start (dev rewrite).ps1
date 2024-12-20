@@ -225,6 +225,14 @@ foreach ($item in $Spreadsheet) {
         $case = "Philadelphia neighborhood shooting"
     }
 
+    if ($location -like 'Lousiana') {
+        $location = $location -replace 'Lousiana', 'Louisiana'
+    }
+
+    if ($state -eq 'Lousiana') {
+        $state = $state -replace 'Lousiana', 'Louisiana'
+    }
+
     # Final CleanData Array for CH Edition
     $Data += [PSCustomObject]@{
         case = $case
