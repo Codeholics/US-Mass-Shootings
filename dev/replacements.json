@@ -154,7 +154,7 @@
         "case": "Mercy Hospital shooting",
         "date": "2018-11-19",
         "weapon_type": "One semiautomatic handgun",
-        "summary": "Juan Lopez, 32, confronted his former fiance, ER doctor Tamara O''Neal, before shooting her and opening fire on others at the hospital, including a responding police officer, Samuel Jimenez, and a pharmacy employee, Dayna Less. Lopez was fatally shot by a responding SWAT officer. Lopez had a history of domestic abuse against an ex-wife, and was kicked out of a fire department training academy for misconduct against female cadets.",
+        "summary": "Juan Lopez, 32, confronted his former fiance, ER doctor Tamara O'Neal, before shooting her and opening fire on others at the hospital, including a responding police officer, Samuel Jimenez, and a pharmacy employee, Dayna Less. Lopez was fatally shot by a responding SWAT officer. Lopez had a history of domestic abuse against an ex-wife, and was kicked out of a fire department training academy for misconduct against female cadets.",
         "changes": "Updated summary (removed accent e) weapon_type to be more consistent."
     },
     {
@@ -254,7 +254,7 @@
         "changes": "Updated weapon_type based on the information in weapon_details so data is consistent."
     },
     {
-        "case": "San Ysidro McDonald''s massacre",
+        "case": "San Ysidro McDonald's massacre",
         "date": "1984-07-18",
         "weapon_type": "One semiautomatic rifle, one shotgun, one semiautomatic handgun",
         "changes": "Updated weapon_type based on the info in weapon_details so data is consistent."
@@ -369,7 +369,7 @@
         "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
     },
     {
-        "case": "Luigi''s shooting",
+        "case": "Luigi's shooting",
         "date": "1993-08-06",
         "weapon_type": "One semiautomatic rifle, two shotguns",
         "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
