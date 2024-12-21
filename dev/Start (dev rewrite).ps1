@@ -287,11 +287,13 @@ try {
     Write-LogError -LogPath $LogFilePath -Message "[$(Get-Date)] Exporting clean CH Edition dataset for data.world [$ExportCHEdition]" -ToScreen
 }
 
-# Push data to SQLite DB
-& "$CPSScriptRoot\SQLPort.ps1"
+if ($null -ne $DataFinal) {
+    # Push data to SQLite DB
+    & "$CPSScriptRoot\SQLPort.ps1"
 
-# Generate Statistics.md
-& "$CPSScriptRoot\Statistics.ps1"
+    # Generate Statistics.md
+    & "$CPSScriptRoot\Statistics.ps1"
+}
 
 # HTML Export of the data. Will popup once script is completed.
 try {

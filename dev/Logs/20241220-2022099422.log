@@ -1,0 +1,18 @@
+***************************************************************************************************
+Started processing at [12/20/2024 14:46:08].
+***************************************************************************************************
+
+Running script version [2.0].
+
+***************************************************************************************************
+
+[12/20/2024 14:46:08] Export Folder: [D:\Code\Repos\US-Mass-Shootings\dev\Export] already exists
+ERROR: [12/20/2024 14:46:08] Mother Jones CSV copy failed
+ERROR: [12/20/2024 14:46:08] Mother Jones CSV import failed
+[12/20/2024 14:46:08] Starting column data correction loop
+[12/20/2024 14:46:09] Exported clean CH Edition dataset for data.world [D:\Code\Repos\US-Mass-Shootings\dev\Export\Codeholics - Mass Shootings Database 1982-2024.csv]
+[12/20/2024 14:46:09] Exported WebView [D:\Code\Repos\US-Mass-Shootings\dev\Export\WebView.html]
+
+***************************************************************************************************
+Finished processing at [12/20/2024 14:46:09].
+***************************************************************************************************

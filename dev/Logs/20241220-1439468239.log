@@ -1,0 +1,22 @@
+***************************************************************************************************
+Started processing at [12/20/2024 14:43:40].
+***************************************************************************************************
+
+Running script version [2.0].
+
+***************************************************************************************************
+
+[12/20/2024 14:43:40] Export Folder: [D:\Code\Repos\US-Mass-Shootings\dev\Export] already exists
+ERROR: [12/20/2024 14:43:40] Mother Jones CSV copy failed
+ERROR: [12/20/2024 14:43:40] Mother Jones CSV import failed
+[12/20/2024 14:43:40] Starting column data correction loop
+[12/20/2024 14:43:41] Exported clean CH Edition dataset for data.world [D:\Code\Repos\US-Mass-Shootings\dev\Export\Codeholics - Mass Shootings Database 1982-2024.csv]
+[12/20/2024 14:43:42] SQLite DB Created [D:\Code\Repos\US-Mass-Shootings\dev\Resources\System.Data.SQLite.dll]
+[12/20/2024 14:43:42] Connected to SQLite DB [D:\Code\Repos\US-Mass-Shootings\dev\Export\MassShooterDatabase.sqlite]
+[12/20/2024 14:43:42] Importing CH Edition [D:\Code\Repos\US-Mass-Shootings\dev\Export\Codeholics - Mass Shootings Database 1982-2024.csv]
+ERROR: [12/20/2024 14:43:42] Importing MJ Edition [D:\Code\Repos\US-Mass-Shootings\dev\Export\Mother Jones - Mass Shootings Database 1982-2024.csv]
+[12/20/2024 14:43:44] Exported WebView [D:\Code\Repos\US-Mass-Shootings\dev\Export\WebView.html]
+
+***************************************************************************************************
+Finished processing at [12/20/2024 14:43:44].
+***************************************************************************************************

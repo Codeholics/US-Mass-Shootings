@@ -71,40 +71,85 @@ function Get-MotherJonesDB {
         $year = $null
 
         # Variable assignments
-        $Summary = $item.summary -replace '(\r\n|\r|\n)', ' '
-        $MentalHealthDetails = $item.mental_health_details #-replace "'", "''"
-        $Case = $item.case #-replace "'", "''"
-        $WhereObtained = $item.where_obtained #-replace "'", "''"
-        $WeaponDetails = $item.weapon_details #-replace "'", "''"
-        $WeaponType = $item.weapon_type #-replace "'", "''"
+        $summary = $item.summary -replace '(\r\n|\r|\n)', ' '
+        $mental_health_details = $item.mental_health_details
+        $case = $item.case
+        $where_obtained = $item.where_obtained
+        $weapon_details = $item.weapon_details
+        $weapon_type = $item.weapon_type
         $sources = $item.sources -replace '(\r\n|\r|\n)', ' '
-        $Date = (Get-Date $item.date).ToString("yyyy-MM-dd")
+        $date = (Get-Date $item.date).ToString("yyyy-MM-dd")
+        $race = $item.race
+        $location = $item.location
+        $fatalities = $item.fatalities
+        $injured = $item.injured
+        $total_victims = $item.total_victims
+        $location_2 = $item.location_2
+        $age_of_Shooter = $item.age_of_Shooter
+        $prior_signs_mental_health_issues = $item.prior_signs_mental_health_issues
+        $weapons_obtained_legally = $item.weapons_obtained_legally
+        $gender = $item.gender
+        $sources = $item.sources
+        $mental_health_sources = $item.mental_health_sources
+        $latitude = $item.latitude
+        $longitude = $item.longitude
+        $type = $item.type
+        $year = $item.year
+
+        # Fixing bad characters that -replace doesn't work because of anti-virus
+        if ($case -eq "Marjory Stoneman Douglas High School shooting" -and $date -eq "2018-02-14") {
+            $summary = "Nikolas J. Cruz, 19, heavily armed with an AR-15, tactical gear, and 'countless magazines' of ammo, according to the Broward County Sheriff, attacked the high school as classes were ending for the day, killing at least 17 people and injuring many others. He was apprehended by authorities shortly after fleeing the campus."
+        }
+
+        if ($case -eq "Yountville veterans home shooting" -and $date -eq "2018-03-09") {
+            $summary = "Army veteran Albert Cheung Wong, 36, stormed a veterans home where he was previously under care, exchanging gunfire with a sheriff's deputy and taking three women hostage, one of whom he'd previously threatened. After a standoff with law enforcement, he killed the three women and himself."
+        }
+
+        if ($case -eq "Capital Gazette shooting" -and $date -eq "2018-06-28") {
+            $summary = "Jarrod W. Ramos, 38, shot through the glass doors of the paper's newsroom around 3pm to carry out his attack; police quickly responding to the scene found him hiding under a desk and apprehended him. Ramos had harbored a longstanding grudge against the paper over a 2011 column that had detailed his guilty plea for the harassment of a former female classmate. Ramos had sued the paper for defamation and lost."
+        }
+
+        if ($case -eq "Thousand Oaks nightclub shooting" -and $date -eq "2018-11-07") {
+            $summary = "Ian David Long, 28, dressed in black and armed with a handgun and a smoke device, approached the Borderline Bar & Grill a country music venue popular with college students close to midnight and opened fire, killing a security guard and then others in the club, including a sheriff's deputy responding to the attack. Long was found dead at the scene from apparent suicide. He was a former Marine and had a history of interactions with local law enforcement, including a mental health evaluation in which he'd been cleared."
+        }
+
+        if ($case -eq "Mercy Hospital shooting" -and $date -eq "2018-11-19") {
+            $summary = "Juan Lopez, 32, confronted his former fiance, ER doctor Tamara O'Neal, before shooting her and opening fire on others at the hospital, including a responding police officer, Samuel Jimenez, and a pharmacy employee, Dayna Less. Lopez was fatally shot by a responding SWAT officer. Lopez had a history of domestic abuse against an ex-wife, and was kicked out of a fire department training academy for misconduct against female cadets."
+        }
+
+        if ($case -eq "Pensacola Naval base shooting" -and $date -eq "2019-12-06") {
+            $summary = "Ahmed Mohammed al-Shamrani, 21, a Saudi Arabian military pilot training in the United States, opened fire just before 7 a.m. in an air station classroom. He was soon shot and killed by responding Florida sheriff's deputies."
+        }
+
+        if ($case -eq "Jersey City kosher market shooting" -and $date -eq "2019-12-10") {
+            $summary = "David N. Anderson, 47, and Francine Graham, 50, were heavily armed and traveling in a white van when they first killed a police officer in a cemetery, and then opened fire at a kosher market, fueled both by anti-Semitism and anti-law enforcement beliefs, according to New Jersey authorities. The pair, linked to the antisemitic ideology of the Black Hebrew Israelites extremist group, were killed after a lengthy gun battle with police at the market."
+        }
 
         # Add to $DataFix array
         $DataFix += [PSCustomObject]@{
-            case = $Case
-            location = $item.location
-            date = $Date
-            summary = $Summary
-            fatalities = $item.fatalities
-            injured = $item.injured
-            total_victims = $item.total_victims
-            location_2 = $item.location_2
-            age_of_Shooter = $item.age_of_Shooter
-            prior_signs_mental_health_issues = $item.prior_signs_mental_health_issues
-            mental_health_details = $MentalHealthDetails
-            weapons_obtained_legally = $item.weapons_obtained_legally
-            where_obtained = $WhereObtained
-            weapon_type = $WeaponType
-            weapon_details = $WeaponDetails
-            race = $item.race
-            gender = $item.gender
-            sources = $item.sources
-            mental_health_sources = $item.mental_health_sources
-            latitude = $item.latitude
-            longitude = $item.longitude
-            type = $item.type
-            year = $item.year
+            case = $case
+            location = $location
+            date = $date
+            summary = $summary
+            fatalities = $fatalities
+            injured = $injured
+            total_victims = $total_victims
+            location_2 = $location_2
+            age_of_Shooter = $age_of_Shooter
+            prior_signs_mental_health_issues = $prior_signs_mental_health_issues
+            mental_health_details = $mental_health_details
+            weapons_obtained_legally = $weapons_obtained_legally
+            where_obtained = $where_obtained
+            weapon_type = $weapon_type
+            weapon_details = $weapon_details
+            race = $race
+            gender = $gender
+            sources = $sources
+            mental_health_sources = $mental_health_sources
+            latitude = $latitude
+            longitude = $longitude
+            type = $type
+            year = $year
         }
     }
 
