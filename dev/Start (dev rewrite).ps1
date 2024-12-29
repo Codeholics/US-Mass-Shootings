@@ -22,6 +22,7 @@ $ExportPath = Join-Path -Path $CPSScriptRoot -ChildPath 'Export'
 # Import and Export FileName Variables
 $ExportWebView = Join-Path -Path $ExportPath -ChildPath 'WebView.html'
 $ExportCHEdition = Join-Path -Path $ExportPath -ChildPAth 'Codeholics - Mass Shootings Database 1982-2024.csv'
+$ExportedCHEditionDW = Join-Path -Path $ExportPath -ChildPath 'Codeholics - Mass Shootings Database 1982-2024 DW.csv'
 $ImportCSVPath = Join-Path -Path $ExportPath -ChildPath 'Mother Jones - Mass Shootings Database 1982-2024.csv'
 
 # Log Variables
@@ -213,13 +214,13 @@ foreach ($item in $Spreadsheet) {
     }
 
     # State corrections
-    if ($state -eq 'Kentucky') {
-        $state = 'KY'
-    }
+    #if ($state -eq 'Kentucky') {
+    #    $state = 'KY'
+    #}
 
-    if ($state -eq 'Tennessee') {
-        $state = 'TN'
-    }
+    #if ($state -eq 'Tennessee') {
+    #    $state = 'TN'
+    #}
 
     if ($case -eq 'Philidelphia neighborhood shooting') {
         $case = "Philadelphia neighborhood shooting"
@@ -294,6 +295,19 @@ if ($null -ne $DataFinal) {
     # Generate Statistics.md
     & "$CPSScriptRoot\Statistics.ps1"
 }
+
+# Import CH Edition to Export DW friendly version
+$ImportedCHEdition = Import-Csv -Path $ExportCHEdition
+
+    # Iterate through each row and each column to remove single and double quotes
+foreach ($row in $ImportedCHEdition) {
+    foreach ($column in $row.PSObject.Properties.Name) {
+        $row.$column = $row.$column -replace "'", "" -replace "''", "" -replace '"', ""
+    }
+}
+
+    # Export DW friendly version of CH Edition
+$ImportedCHEdition | Export-Csv -Path $ExportedCHEditionDW -NoTypeInformation
 
 # HTML Export of the data. Will popup once script is completed.
 try {
