@@ -308,6 +308,7 @@ foreach ($row in $ImportedCHEdition) {
 
     # Export DW friendly version of CH Edition
 $ImportedCHEdition | Export-Csv -Path $ExportedCHEditionDW -NoTypeInformation
+Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Exported DW friendly version of CH Edition [$ExportedCHEditionDW]" -ToScreen
 
 # HTML Export of the data. Will popup once script is completed.
 try {
