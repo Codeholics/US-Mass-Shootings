@@ -1,7 +1,9 @@
 Import-Module ImportExcel
 
 # Path to the root directory of the script
-$CPSScriptRoot = "D:\Code\Repos\US-Mass-Shootings\dev"
+# Using CLI, Navigate to the root directory of the script and run the script "./start.ps1"
+$CPSScriptRoot = $PSScriptRoot
+# $CPSScriptRoot = "D:\Code\Repos\US-Mass-Shootings"
 
 # Importing Functions
     # Function to edit cases
@@ -11,19 +13,18 @@ $EditCases = Join-Path -Path $CPSScriptRoot -ChildPath "Functions" | Join-Path -
 $GetMotherJonesDB = Join-Path -Path $CPSScriptRoot -ChildPath 'Functions' | Join-Path -ChildPath 'Get-MotherJonesDB.ps1'
 . $GetMotherJonesDB
 
-# Import the Mother Jones Edition
-#$ImportedMJEdition = Import-csv -Path "D:\Code\Repos\US-Mass-Shootings\Export\Mother Jones - Mass Shootings Database 1982-2024.csv"
-
 # Variables
 $Date = Get-Date -Format "yyyyMMdd"
 $Random = Get-Random
 $ExportPath = Join-Path -Path $CPSScriptRoot -ChildPath 'Export'
+$year = Get-Date -Format "yyyy"
+$DatasetYear = "1982-$year"
 
 # Import and Export FileName Variables
 $ExportWebView = Join-Path -Path $ExportPath -ChildPath 'WebView.html'
-$ExportCHEdition = Join-Path -Path $ExportPath -ChildPAth 'Codeholics - Mass Shootings Database 1982-2024.csv'
-$ExportedCHEditionDW = Join-Path -Path $ExportPath -ChildPath 'Codeholics - Mass Shootings Database 1982-2024 DW.csv'
-$ImportCSVPath = Join-Path -Path $ExportPath -ChildPath 'Mother Jones - Mass Shootings Database 1982-2024.csv'
+$ExportCHEdition = Join-Path -Path $ExportPath -ChildPath "Codeholics - Mass Shootings Database $DatasetYear.csv"
+$ExportedCHEditionDW = Join-Path -Path $CPSScriptRoot -ChildPath 'DataWorld' | Join-Path -ChildPath "Codeholics - Mass Shootings Database $DatasetYear.csv"
+$ImportCSVPath = Join-Path -Path $ExportPath -ChildPath "Mother Jones - Mass Shootings Database $DatasetYear.csv"
 
 # Log Variables
 $LogPath = Join-Path -Path $CPSScriptRoot -ChildPath 'Logs'
@@ -213,15 +214,6 @@ foreach ($item in $Spreadsheet) {
         $weapon_type = 'Two handguns'
     }
 
-    # State corrections
-    #if ($state -eq 'Kentucky') {
-    #    $state = 'KY'
-    #}
-
-    #if ($state -eq 'Tennessee') {
-    #    $state = 'TN'
-    #}
-
     if ($case -eq 'Philidelphia neighborhood shooting') {
         $case = "Philadelphia neighborhood shooting"
     }
@@ -277,9 +269,6 @@ foreach ($item in $Data) {
 # Correct order of columns
 $DataFinal = $ModifiedCases | Select-Object -Property case, location, city, state, date, summary, fatalities, injured, total_victims, location_2, age_of_Shooter, prior_signs_mental_health_issues, mental_health_details, weapons_obtained_legally, where_obtained, weapon_type, weapon_details, race, gender, sources, mental_health_sources, sources_additional_age, latitude, longitude, type, year, changes
 
-# check single record (testing)
-#$DataFinal | where-object {$_.case -eq "Nashville Christian school shooting"}
-
 #Export clean dataset for data.world
 try {
     $DataFinal | Export-CSV -path $ExportCHEdition -NoTypeInformation
@@ -288,6 +277,7 @@ try {
     Write-LogError -LogPath $LogFilePath -Message "[$(Get-Date)] Exporting clean CH Edition dataset for data.world [$ExportCHEdition]" -ToScreen
 }
 
+# Executing SQLPort and Statistics
 if ($null -ne $DataFinal) {
     # Push data to SQLite DB
     & "$CPSScriptRoot\SQLPort.ps1"

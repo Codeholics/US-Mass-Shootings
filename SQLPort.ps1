@@ -1,6 +1,6 @@
 Import-Module -Name PSSQLite, ImportExcel, PSLogging
 
-$CPSScriptRoot = "D:\Code\Repos\US-Mass-Shootings\dev"
+#$CPSScriptRoot = "D:\Code\Repos\US-Mass-Shootings"
 
 # Importing functions
 $GetMotherJonesDB = Join-Path -Path $CPSScriptRoot -ChildPath 'Functions' | Join-Path -ChildPath 'Get-MotherJonesDB.ps1'
