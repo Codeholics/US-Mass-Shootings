@@ -68,10 +68,11 @@ All artifacts after running the script can be found in the `/Export` folder.
 
 Path|Purpose
 ---|---
-|Mother Jones Raw.csv   |   The Mother Jones dataset, in its original form, is provided without any modifications. However, it should be noted that the CSV file contains duplicate headers, which renders it unsuitable for direct use in this project.
-|   Mother Jones - Mass Shootings Database 1982-2023.csv    |   The duplicated header in the `Mother Jones Raw.csv` file has been corrected to ensure that the dataset can be used accurately and efficiently in this project.|
+|   Mother Jones Raw.csv   |   The Mother Jones dataset, in its original form, is provided without any modifications. However, it should be noted that the CSV file contains duplicate headers, which renders it unsuitable for direct use in this project.
+|   Mother Jones - Mass Shootings Database 1982-2023.csv    |   The duplicated header in the `Mother Jones Raw.csv` file has been corrected to ensure that the dataset can be used accurately and efficiently in this project.
 |   Codeholics - Mass Shootings Database 1982-2023.csv   |   Final report after data changes made by `start.ps1`.
-|   MassShooterDatabase.sqlite |   The final results of this project have been stored in a SQLite database, which includes both the original dataset from Mother Jones and the Codeholics Edition. This database serves as a reliable and efficient resource for data scientists seeking to analyze and report on mass shootings. To facilitate the use of the database, sample statistics queries have been provided in the `/SQL` folder. These queries offer a useful starting point for data scientists seeking to conduct statistical analyses on mass shootings data.    |
+|   Codeholics - Mass Shootings Database 1982-2023 DW.csv | Since data.world has an issue trying to escape `'` and `"`, I imported the `Codeholics - Mass Shootings Database 1982-2023.csv` and Exported it again but this time without those characters.
+|   MassShooterDatabase.sqlite |   The final results of this project have been stored in a SQLite database, which includes both the original dataset from Mother Jones and the Codeholics Edition. This database serves as a reliable and efficient resource for data scientists seeking to analyze and report on mass shootings. To facilitate the use of the database, sample statistics queries have been provided in the `/SQL` folder. These queries offer a useful starting point for data scientists seeking to conduct statistical analyses on mass shootings data.
 
 <br>
 
