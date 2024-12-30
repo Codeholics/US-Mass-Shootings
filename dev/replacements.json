@@ -49,7 +49,8 @@
         "case": "San Jose VTA shooting",
         "date": "2021-05-26",
         "weapon_type": "One semiautomatic handgun",
-        "changes": "Updated weapon_type to match weapon_details and to be consistent"
+        "summary": "Samuel Cassidy, 57, a Valley Transportation Authority employee, opened fire at a union meeting at the light rail facility, soon also fatally shooting himself at the scene. Before the attack, Cassidy had set fire to his own house, where he also had firearms and a stockpile of ammunition. His legal history included his ex-wife filing a restraining order against him in 2009.",
+        "changes": "Updated weapon_type to match weapon_details and to be consistent. Corrected typo in summary."
     },
     {
         "case": "Planned Parenthood clinic",
@@ -93,7 +94,8 @@
         "case": "Charleston Church Shooting",
         "date": "2015-06-17",
         "weapon_type": "One semiautomatic handgun",
-        "changes": "Updated weapon_type to be consistent"
+        "summary": "Dylann Storm Roof, 21, shot and killed 9 people after opening fire at the Emanuel AME Church in Charleston, South Carolina. According to a roommate, he had allegedly been planning something like that for six months.",
+        "changes": "Updated weapon_type to be consistent. Removed bad special characters from the summary"
     },
     {
         "case": "Marysville-Pilchuck High School shooting",
@@ -263,7 +265,8 @@
         "case": "Fort Lauderdale airport shooting",
         "date": "2017-01-06",
         "weapon_type": "One semiautomatic handgun",
-        "changes": "Updated weapon_type based on info in weapon_details to be consistent."
+        "summary": "Esteban Santiago, 26, flew from Alaska to Fort Lauderdale, where he opened fire in the baggage claim area of the airport, killing five and wounding six before police apprehended him. (Numerous other people were reportedly injured while fleeing during the panic.)",
+        "changes": "Updated weapon_type based on info in weapon_details to be consistent. Corrected typo in summary."
     },
     {
         "case": "Boulder supermarket shooting",
@@ -286,7 +289,7 @@
     },
     {
         "case": "Buffalo supermarket massacre",
-        "date": "2009-05-14",
+        "date": "2022-05-14",
         "weapon_type": "One semiautomatic rifle",
         "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
     },
@@ -384,7 +387,8 @@
         "case": "Cascade Mall shooting",
         "date": "2016-09-23",
         "weapon_type": "One semiautomatic rifle",
-        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+        "summary": "Arcan Cetin, 20, killed a teen girl and three women in the cosmetics section of a Macy's department store at the Cascade Mall. A man was critically wounded in the shooting and taken to Harborview Medical Center in Seattle, where he died. Cetin was apprehended by police a few hours after the shooting while driving a car near his residence.",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent. Removed special characters from summary."
     },
     {
         "case": "Royal Oak postal shootings",
@@ -537,11 +541,12 @@
         "case": "Springfield convenience store shooting",
         "date": "2020-03-16",
         "weapon_type": "One semiautomatic rifle, one semiautomatic handgun",
-        "changes": "Updated weapon_type to be consistent with other records"
+        "summary": "Joaquin S. Roman, 31, went on a rampage culminating at a Kum & Go, killing four people, including a police officer, before fatally shooting himself on the scene.",
+        "changes": "Updated weapon_type to be consistent with other records. Removed bad special characters from summary."
     },
     {
         "case": "University of Virginia shooting",
-        "date": "22022-11-13",
+        "date": "2022-11-13",
         "weapon_type": "One semiautomatic handgun",
         "changes": "Updated weapon_type to be consistent"
     },
@@ -634,7 +639,8 @@
         "case": "Trolley Square shooting",
         "date": "2007-02-12",
         "weapon_type": "One shotgun, one revolver",
-        "changes": "Updated weapon_type to be consistent with other records"
+        "summary": "Sulejman Talovi, 18, rampaged through the shopping center until he was shot dead by police.",
+        "changes": "Updated weapon_type to be consistent with other records. Removed bad special characters from summary."
     },
     {
         "case": "Carthage nursing home shooting",
@@ -664,7 +670,8 @@
         "case": "Virginia Beach municipal building shooting",
         "date": "2019-05-31",
         "weapon_type": "Two semiautomatic handguns",
-        "changes": "Updated weapon_type to be consistent with other records"
+        "summary": "DeWayne Craddock, 40, a municipal city worker wielding handguns, a suppressor and high-capacity magazines, killed en masse inside a Virginia Beach municipal building in the Princess Anne area late in the day on a Friday, before dying in a prolonged gun battle with police. Craddock reportedly had submitted his resignation from his job that morning. He was a veteran of the Virginia Army National Guard, and \"had a shaved head, bodybuilder's physique and cameras in the windows of his house on a peaceful cul-de-sac,\" according to the Washington Post.",
+        "changes": "Updated weapon_type to be consistent with other records. Updated summary to remove bad special characters."
     },
     {
         "case": "Atlanta massage parlor shootings",
@@ -757,5 +764,11 @@
         "date": "2023-07-03",
         "weapon_type": "One semiautomatic rifle, one semiautomatic handgun",
         "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Las Vegas Strip massacre",
+        "date": "2017-10-01",
+        "summary": "Stephen Craig Paddock, 64, fired a barrage of rapid gunfire using semiautomatic rifles modified with \"bump stocks\" at thousands of concertgoers on the Las Vegas Strip late on a Sunday night; Paddock had positioned himself in a corner suite on the 32nd floor of the Mandalay Bay Resort and Casino, where he took aim from windows he'd smashed open. Police responding to the attack found Paddock inside the hotel suite, deceased from a self-inflicted gunshot.",
+        "changes": "Removed bad special characters from summary."
     }
 ]
