@@ -208,7 +208,7 @@ function New-MDTable {
         }
     }
 
-$CPSScriptRoot = "D:\Code\Repos\US-Mass-Shootings\"
+#$CPSScriptRoot = "D:\Code\Repos\US-Mass-Shootings"
 
 Add-Type -Path "$CPSScriptRoot\Resources\System.Data.SQLite.dll"
 
@@ -346,4 +346,4 @@ $($STATS_WeaponCombos | New-MDTable -Shrink | Out-String)
 @"
 
 
-$OutPut > "$CPSScriptRoot\Statistics.md"
+$OutPut > (Join-Path $CPSScriptRoot -ChildPath "Export" | Join-Path -ChildPath "Statistics.md")

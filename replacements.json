@@ -1,0 +1,774 @@
+[
+    {
+        "case": "Tulsa medical center shooting",
+        "date": "2022-06-01",
+        "injured": "0",
+        "total_victims": "4",
+        "age_of_shooter": "45",
+        "weapon_type": "One semiautomatic rifle, one semiautomatic handgun",
+        "changes": "Updated injured, total_victims, age_of_shooter, weapon_type"
+    },
+    {
+        "case": "Thousand Oaks nightclub shooting",
+        "date": "2018-11-07",
+        "weapon_type": "One semiautomatic handgun",
+        "summary": "Ian David Long, 28, dressed in black and armed with a handgun and a smoke device, approached the Borderline Bar & Grill a country music venue popular with college students close to midnight and opened fire, killing a security guard and then others in the club, including a sheriffs deputy responding to the attack. Long was found dead at the scene from apparent suicide. He was a former Marine and had a history of interactions with local law enforcement, including a mental health evaluation in which had been cleared.",
+        "changes": "Updated weapon_type to be more consistent. Removed special characters from summary."
+    },
+    {
+        "case": "Nashville Christian school shooting",
+        "date": "2023-03-27",
+        "gender": "TM",
+        "weapon_type": "One semiautomatic rifle, one pistol caliber carbine, one semiautomatic handgun",
+        "mental_health_sources": "https://www.nytimes.com/live/2023/03/28/us/nashville-school-shooting-tennessee",
+        "prior_signs_mental_health_issues": "Police Say Shooter Was Under Doctor's Care for 'Emotional Disorder'",
+        "mental_health_details": "was in possession of an AR-15 military-style rifle, a 9 mm Kel-Tec SUB2000 pistol caliber carbine, and a 9mm Smith and Wesson M&P Shield EZ 2.0 handgun. The AR-15 and 9 mm pistol caliber carbine appear to have 30-round magazines",
+        "weapon_details": "was in possession of an AR-15 military-style rifle, a 9 mm Kel-Tec SUB2000 pistol caliber carbine, and a 9mm Smith and Wesson M&P Shield EZ 2.0 handgun. The AR-15 and 9 mm pistol caliber carbine appear to have 30-round magazines",
+        "sources": "https://www.tennessean.com/story/news/crime/2023/03/27/nashville-mourns-mass-shooting-covenant-school/70052585007/; https://www.wsmv.com/2023/03/27/vumc-3-students-2-adults-dead-police-say-shooter-also-dead-covenant-school/; https://www.washingtonpost.com/nation/2023/03/27/nashville-shooting-covenant-school/; https://www.nytimes.com/live/2023/03/27/us/nashville-shooting-covenant-school; https://www.nytimes.com/article/nashville-school-shooting-tennessee.html; https://www.washingtonpost.com/nation/2023/03/27/nashville-school-shooting/; https://www.kq2.com/news/national/heres-what-we-know-about-the-guns-used-in-the-nashville-school-shooting/",
+        "changes": "Updated gender to be consistent (TM Trans Male). Old value was F (identifies as transgender and Audrey Hale is a biological woman who, on a social media profile, used male pronouns,? according to Nashville Metro PD officials). weapon_type, mental health, and weapon details updated. Added sources."
+    },
+    {
+        "case": "Capital Gazette shooting",
+        "date": "2018-06-28",
+        "weapon_type": "One shotgun",
+        "changes": "Updated weapon_type to match the weapon desc and to keep values consistent"
+    },
+    {
+        "case": "Mohawk Valley shootings",
+        "date": "2013-03-13",
+        "weapon_type": "One shotgun",
+        "changes": "Updated weapon_type to be consistent"
+    },
+    {
+        "case": "Highland Park July 4 parade shooting",
+        "date": "2022-07-04",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type to be consistent"
+    },
+    {
+        "case": "San Jose VTA shooting",
+        "date": "2021-05-26",
+        "weapon_type": "One semiautomatic handgun",
+        "summary": "Samuel Cassidy, 57, a Valley Transportation Authority employee, opened fire at a union meeting at the light rail facility, soon also fatally shooting himself at the scene. Before the attack, Cassidy had set fire to his own house, where he also had firearms and a stockpile of ammunition. His legal history included his ex-wife filing a restraining order against him in 2009.",
+        "changes": "Updated weapon_type to match weapon_details and to be consistent. Corrected typo in summary."
+    },
+    {
+        "case": "Planned Parenthood clinic",
+        "date": "2015-11-27",
+        "weapon_type": "Seven semiautomatic rifles, one shotgun, five handguns",
+        "weapon_details": "Dear had with him four SKS rifles, five handguns, two additional rifles, a shotgun, more than 500 rounds of ammunition, as well as propane tanks",
+        "sources": "http://www.nytimes.com/2015/11/28/us/colorado-planned-parenthood-shooting.html; http://www.cnn.com/2015/12/09/us/colorado-planned-parenthood-shooting/; http://www.npr.org/sections/thetwo-way/2015/11/28/457674369/planned-parenthood-shooting-police-name-suspect-procession-for-fallen-officer; http://www.cbsnews.com/news/robert-lewis-dear-planned-parenthood-first-court-appearance/; http://www.denverpost.com/news/ci_29729326/judge-wont-release-all-records-accused-planned-parenthood; http://www.csindy.com/IndyBlog/archives/2016/02/17/judge-resists-unsealing-dear-affidavits; http://www.nbcnews.com/news/us-news/who-robert-dear-planned-parenthood-shooting-suspect-seemed-strange-not-n470896; https://www.justice.gov/opa/pr/robert-dear-indicted-federal-grand-jury-2015-planned-parenthood-clinic-shooting",
+        "changes": "Updated weapon_type to be more consistent, updated weapon details according to new source link from justice.gov"
+    },
+    {
+        "case": "Pennsylvania hotel bar shooting",
+        "date": "2019-01-24",
+        "weapon_type": "One handgun",
+        "changes": "Updated weapon_type to be consistent"
+    },
+    {
+        "case": "SunTrust bank shooting",
+        "date": "2019-01-23",
+        "weapon_type": "One semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent"
+    },
+    {
+        "case": "T&T Trucking shooting",
+        "date": "2018-09-12",
+        "weapon_type": "One revolver",
+        "changes": "Updated weapon_type to be consistent"
+    },
+    {
+        "case": "Edgewood businees park shooting",
+        "date": "2017-10-18",
+        "weapon_type": "One semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent"
+    },
+    {
+        "case": "Fresno downtown shooting",
+        "date": "2017-04-18",
+        "weapon_type": "One revolver",
+        "changes": "Updated weapon_type to be consistent"
+    },
+    {
+        "case": "Charleston Church Shooting",
+        "date": "2015-06-17",
+        "weapon_type": "One semiautomatic handgun",
+        "summary": "Dylann Storm Roof, 21, shot and killed 9 people after opening fire at the Emanuel AME Church in Charleston, South Carolina. According to a roommate, he had allegedly been planning something like that for six months.",
+        "changes": "Updated weapon_type to be consistent. Removed bad special characters from the summary"
+    },
+    {
+        "case": "Marysville-Pilchuck High School shooting",
+        "date": "2014-10-24",
+        "weapon_type": "One semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent"
+    },
+    {
+        "case": "Fort Hood shooting 2",
+        "date": "2014-04-03",
+        "weapon_type":"One semiautomatic handgun",
+        "weapons_obtained_legally": "Yes",
+        "changes": "Updated weapon_type to be more consistent, removed a new line from weapons_obtained_legally"
+    },
+    {
+        "case": "Molson Coors shooting",
+        "date": "2020-02-26",
+        "weapon_type": "Two handguns",
+        "changes": "Updated weapon_type to be more consistent. Reviewed all source links, no mention of semiautomatic or gun details."
+    },
+    {
+        "case": "Sacramento County church shooting",
+        "date": "2022-02-28",
+        "age_of_shooter": "39",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated age_of_shooter found in source link, weapon_type to be consistent"
+    },
+    {
+        "case": "Orange office complex shooting",
+        "date": "2021-03-31",
+        "age_of_shooter": "44",
+        "weapon_type": "One semiautomatic handgun",
+        "changes": "Updated age_of_shooter found in summary, weapon_type to be consistent"
+    },
+    {
+        "case": "Harry Pratt Co. warehouse shooting",
+        "date": "2019-02-15",
+        "weapon_type": "One semiautomatic handgun",
+        "weapon_details": "Smith & Wesson .40 cal handgun, with a green sighting laser",
+        "changes": "Updated weapon_type based on the information in weapon details so data is consistent."
+    },
+    {
+        "case": "Jersey City kosher market shooting",
+        "date": "2019-12-10",
+        "weapon_type": "One assault rifle, one shotgun, two semiautomatic pistols",
+        "weapon_details": "AR-15-style rifle, 12-gauge shotgun, two 9-millimeter semiautomatic pistols",
+        "age_of_shooter": "48",
+        "changes": "Updated weapon_type and weapon_details based on the information in source links, Updated age to be the average of both shooters."
+    },
+    {
+        "case": "Washington Navy Yard shooting",
+        "date": "2013-09-16",
+        "weapon_type": "One shotgun, one handgun",
+        "weapon_details": "Remington 870 Express, 12-gauge Sawed-off shotgun, .45-caliber Beretta handgun",
+        "changes": "Updated weapon_type to be more consistent."
+    },
+    {
+        "case": "Mercy Hospital shooting",
+        "date": "2018-11-19",
+        "weapon_type": "One semiautomatic handgun",
+        "summary": "Juan Lopez, 32, confronted his former fiance, ER doctor Tamara O'Neal, before shooting her and opening fire on others at the hospital, including a responding police officer, Samuel Jimenez, and a pharmacy employee, Dayna Less. Lopez was fatally shot by a responding SWAT officer. Lopez had a history of domestic abuse against an ex-wife, and was kicked out of a fire department training academy for misconduct against female cadets.",
+        "changes": "Updated summary (removed accent e) weapon_type to be more consistent."
+    },
+    {
+        "case": "Church potluck dinner shooting",
+        "date": "2022-06-16",
+        "weapon_type": "One handgun",
+        "changes": "Updated weapon_type to be consistent"
+    },
+    {
+        "case": "Oxford High School shooting",
+        "date": "2021-11-30",
+        "weapon_type": "One semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent"
+    },
+    {
+        "case": "Wakefield massacre",
+        "date": "2000-12-26",
+        "weapon_type": "One semiautomatic rifle, one shotgun, one semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent"
+    } ,
+    {
+        "case": "Rural Ohio nursing home shooting",
+        "date": "2017-05-12",
+        "weapon_type": "One shotgun, one handgun",
+        "changes": "Updated weapon_type to be consistent"
+    },
+    {
+        "case": "Robb Elementary School massacre",
+        "date": "2022-05-24",
+        "weapon_type": "Two semiautomatic rifles",
+        "weapon_details": "Smith & Wesson MP 15, Daniel Defense rifle",
+        "changes": "Updated weapon_type to be more consistent, weapon_details from info in sources."
+    },
+    {
+        "case": "Chattanooga military recruitment center",
+        "date": "2015-07-16",
+        "weapon_type": "Two semiautomatic rifles, one semiautomatic handgun",
+        "changes": "Updated weapon_type on the info in weapon_details to be more consistent."
+    },
+    {
+        "case": "Pinewood Village Apartment shooting",
+        "date": "2013-04-21",
+        "weapon_type": "One shotgun, one semiautomatic handgun",
+        "location_2": "Other",
+        "changes": "Updated weapon_type based on the info in weapon_details. location_2 was also updated so data is consistent."
+    },
+    {
+        "case": "Hialeah apartment shooting",
+        "date": "2013-07-26",
+        "weapon_type": "One semiautomatic handgun",
+        "weapon_details": "Glock 17 9mm handgun",
+        "location_2": "Other",
+        "changes": "Updated weapon_type based on the info in weapon_details. Added 9mm to weapon_details per sources. location_2 was updated to be more consistent."
+    },
+    {
+        "case": "Santa Fe High School shooting",
+        "date": "2018-05-18",
+        "weapon_type": "One shotgun, one revolver",
+        "weapon_details": ".38 revolver",
+        "changes": "Updated weapon_type based on the info in weapon_details. weapon_details was updated to be consistent."
+    },
+    {
+        "case": "Pennsylvania supermarket shooting",
+        "date": "2017-06-07",
+        "weapon_type": "Two shotguns",
+        "changes": "Updated weapon_type to be consistent"
+    },
+    {
+        "case": "Rancho Tehama shooting spree",
+        "date": "2017-11-14",
+        "weapon_type": "Two semiautomatic rifles",
+        "changes": "Updated weapon_type based on the info in weapon_details to be consistent"
+    },
+    {
+        "case": "Santa Monica rampage",
+        "date": "2013-06-07",
+        "weapon_type": "One semiautomatic rifle, one handgun",
+        "location_2": "Other",
+        "changes": "Updated weapon_type based on the info in weapon_details also updated location_2 to be consistent."
+    }, 
+    {
+        "case": "Pennsylvania carwash shooting",
+        "date": "2018-01-28",
+        "weapon_type": "One semiautomatic rifle, one semiautomatic handgun",
+        "changes": "Updated weapon_type on info in weapon_details to be consistent."
+    },
+    {
+        "case": "Rite Aid warehouse shooting",
+        "date": "2018-09-20",
+        "weapon_type": "One semiautomatic handgun",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent."
+    },
+    {
+        "case": "Fifth Third Center shooting",
+        "date": "2018-09-06",
+        "weapon_type": "One semiautomatic handgun",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent."
+    },
+    {
+        "case": "San Ysidro McDonald's massacre",
+        "date": "1984-07-18",
+        "weapon_type": "One semiautomatic rifle, one shotgun, one semiautomatic handgun",
+        "changes": "Updated weapon_type based on the info in weapon_details so data is consistent."
+    },
+    {
+        "case": "Fort Lauderdale airport shooting",
+        "date": "2017-01-06",
+        "weapon_type": "One semiautomatic handgun",
+        "summary": "Esteban Santiago, 26, flew from Alaska to Fort Lauderdale, where he opened fire in the baggage claim area of the airport, killing five and wounding six before police apprehended him. (Numerous other people were reportedly injured while fleeing during the panic.)",
+        "changes": "Updated weapon_type based on info in weapon_details to be consistent. Corrected typo in summary."
+    },
+    {
+        "case": "Boulder supermarket shooting",
+        "date": "2021-03-22",
+        "weapon_type": "One semiautomatic rifle, one semiautomatic handgun",
+        "weapon_details": "Ruger AR-556; weapon was purchased six days before the attack. One tactical vest",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent. Moved tactical vest from weapon type to weapon_details"
+    },
+    {
+        "case": "FedEx warehouse shooting",
+        "date": "2021-04-15",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent."
+    },
+    {
+        "case": "Coffee shop police killings",
+        "date": "2009-11-29",
+        "weapon_type": "One semiautomatic handgun, one revolver",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent."
+    },
+    {
+        "case": "Buffalo supermarket massacre",
+        "date": "2022-05-14",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Dayton entertainment district shooting",
+        "date": "2019-08-04",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "El Paso Walmart mass shooting",
+        "date": "2019-08-03",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Gilroy garlic festival shooting",
+        "date": "2019-07-28",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Waffle House shooting",
+        "date": "2018-04-22",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Marjory Stoneman Douglas High School shooting",
+        "date": "2018-02-14",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Westroads Mall shooting",
+        "date": "2007-12-05",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Crandon shooting",
+        "date": "2007-10-07",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Caltrans maintenance yard shooting",
+        "date": "1997-12-18",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Air Force base shooting",
+        "date": "1994-06-20",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Aurora theater shooting",
+        "date": "2012-07-20",
+        "weapon_type": "One semiautomatic rifle, one shotgun, two semiautomatic handguns",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Capitol Hill massacre",
+        "date": "2006-03-25",
+        "weapon_type": "One semiautomatic rifle, one shotgun, two semiautomatic handguns",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Colorado Springs shooting rampage",
+        "date": "2015-10-31",
+        "weapon_type": "One semiautomatic rifle, one semiautomatic handgun",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Shopping centers spree killings",
+        "date": "1987-04-23",
+        "weapon_type": "One semiautomatic rifle, one shotgun, one revolver",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Luigi's shooting",
+        "date": "1993-08-06",
+        "weapon_type": "One semiautomatic rifle, two shotguns",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Lindhurst High School shooting",
+        "date": "1992-05-01",
+        "weapon_type": "One semiautomatic rifle, one shotgun",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Cascade Mall shooting",
+        "date": "2016-09-23",
+        "weapon_type": "One semiautomatic rifle",
+        "summary": "Arcan Cetin, 20, killed a teen girl and three women in the cosmetics section of a Macy's department store at the Cascade Mall. A man was critically wounded in the shooting and taken to Harborview Medical Center in Seattle, where he died. Cetin was apprehended by police a few hours after the shooting while driving a car near his residence.",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent. Removed special characters from summary."
+    },
+    {
+        "case": "Royal Oak postal shootings",
+        "date": "1991-11-14",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "IHOP shooting",
+        "date": "2011-09-06",
+        "weapon_type": "Two semiautomatic rifle, one revolver",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Tree of Life synagogue shooting",
+        "date": "2018-10-27",
+        "weapon_type": "One semiautomatic rifle, three semiautomatic handguns",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "San Bernardino mass shooting",
+        "date": "2015-12-02",
+        "weapon_type": "Two semiautomatic rifles, two semiautomatic handguns",
+        "weapon_details": "Two semiautomatic AR-15-style rifles-one a DPMS A-15, the other a Smith & Wesson M&P15, both with .223 calibre ammunition. Two 9mm semiautomatic handguns. High capacity magazines.Police found a remote controlled explosive device at the scene of the crime.At the home were 12 pipe bombs, 2,500 rounds for the AR-15 variants, 2,000 rounds for the pistols, and several hundred for a .22 calibre rifle. In the suspects car were an additional 1,400 rounds for the rifles and 200 for the handguns.",
+        "location_2": "Workplace",
+        "weapons_obtained_legally": "Yes",
+        "changes": "Updated weapon_type, weapon_details, location_2, and weapons_obtained_legally to include more details from sources and to be more consistent"
+    },
+    {
+        "case": "Standard Gravure shooting",
+        "date": "1989-09-14",
+        "weapon_type": "One semiautomatic rifle, two semiautomatic handguns, one revolver",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Stockton schoolyard shooting",
+        "date": "1989-01-17",
+        "weapon_type": "One semiautomatic rifle, one handgun",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "101 California Street shootings",
+        "date": "1993-07-01",
+        "weapon_type": "Three semiautomatic handguns",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Pensacola Naval base shooting",
+        "date": "2019-12-06",
+        "weapon_type": "One semiautomatic handgun",
+        "weapon_details": "Glock Model 45 9mm",
+        "sources": "https://www.washingtonpost.com/national-security/2019/12/06/naval-station-pensacola-active-shooter/; https://www.cnn.com/us/live-news/pensacola-naval-base-shooter/index.html; https://www.navytimes.com/news/your-navy/2019/12/09/how-did-the-pensacola-gunman-get-the-pistol-he-used-to-kill-3-sailors",
+        "changes": "Added navytimes.com as a source, updated weapon_details and weapon_type based on new information and to be consistent."
+    },
+    {
+        "case": "Walmart shooting in suburban Denver",
+        "date": "2017-11-01",
+        "weapon_type": "One semiautomatic handgun",
+        "weapon_details": "Ruger AR-556 semiautomatic pistol",
+        "sources": "https://www.nytimes.com/2017/11/01/us/thornton-colorado-walmart-shooting.html; http://www.cnn.com/2017/11/01/us/colorado-walmart-shooting/index.html; http://www.thedenverchannel.com/news/crime/colorado-walmart-shooting-suspect-scott-ostrem-had-run-ins-with-police-financial-troubles; http://www.ibtimes.com/who-scott-ostrem-manhunt-underway-colorado-walmart-shooting-suspect-2609562; https://www.nytimes.com/live/2021/03/23/us/boulder-colorado-shooting",
+        "changes": "Added www.nytimes.com as a source, updated weapon_details and weapon_type based on new information and to be consistent."
+    },
+    {
+        "case": "Kalamazoo shooting spree",
+        "date": "2016-02-20",
+        "weapon_type": "One semiautomatic handgun",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent"
+    },
+    {
+        "case": "Umpqua Community College shooting",
+        "date": "2015-10-01",
+        "weapon_type": "One semiautomatic rifle, five semiautomatic handguns",
+        "weapon_details": "9 mm Glock pistol, .40 caliber Smith & Wesson, .40 caliber Taurus pistol, .556 caliber Del-Ton; (ammo details unclear).five magazines of ammunition",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent. Updated weapon_details to be more consistent"
+    },
+    {
+        "case": "Texas First Baptist Church massacre",
+        "date": "2017-11-05",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent. No mention in source links about any handguns"
+    },
+    {
+        "case": "Odessa-Midland shooting spree",
+        "date": "2019-08-31",
+        "weapon_type": "One semiautomatic rifle",
+        "weapon_details": "AR-15-style rifle",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent. No mention in source links about any handguns"
+    },
+    {
+        "case": "Yountville veterans home shooting",
+        "date": "2018-03-09",
+        "weapon_type": "One semiautomatic rifle, one shotgun",
+        "weapon_details": ".308 JR Enterprises LRP-07 semi-automatic rifle 12-gauge Stoeger Coach Gun",
+        "sources": "https://www.cnn.com/2018/03/10/us/california-veterans-home-shooting/index.html; http://www.ktvu.com/news/gunman-in-yountville-veterans-home-killings-was-ex-patient; https://www.washingtonpost.com/news/post-nation/wp/2018/03/09/police-respond-to-reports-of-gunfire-and-hostages-taken-at-california-veterans-home/?utm_term=.b9dde7ac5f0f; http://dig.abclocal.go.com/kgo/PDF/112918_Pathway_Home_Homicide_Redacted.pdf",
+        "changes": "Added 4 new sources to confirm weapon_details and type. No data in original sources, Added police report showing weapon details. Updated weapon_type based on the information in weapon_details so data is consistent."
+    },
+    {
+        "case": "Florida awning manufacturer shooting",
+        "date": "2017-06-05",
+        "weapon_type": "One semiautomatic handgun",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent. No mention in source links about any handguns"
+    },
+    {
+        "case": "Orlando nightclub massacre",
+        "date": "2016-06-12",
+        "weapon_type": "One semiautomatic rifle, one handgun",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent. No mention in source links about any handguns"
+    },
+    {
+        "case": "Excel Industries mass shooting",
+        "date": "2016-02-25",
+        "weapon_type": "One semiautomatic rifle, one handgun",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent. No mention in source links about any handguns"
+    },
+    {
+        "case": "Greenwood Park Mall shooting",
+        "date": "2022-07-17",
+        "weapon_type": "Two semiautomatic rifles, one semiautomatic handgun",
+        "weapon_details": "Sig Sauer M400 rifle, MP15 rifle, Glock 33",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent. Updated weapon details from source links. No mention in source links about any handguns"
+    },
+    {
+        "case": "Dallas police shooting",
+        "date": "2016-07-07",
+        "weapon_type": "One semiautomatic rifle, two semiautomatic handgun",
+        "changes": "Updated weapon_type based on the information in weapon_details so data is consistent. No mention in source links about any handguns"
+    },
+    {
+        "case": "Michigan State University shooting",
+        "date": "2023-02-13",
+        "weapon_type": "Two semiautomatic handguns",
+        "weapon_details": "Two 9mm handguns with additional magazines and ammunition",
+        "sources": "https://www.cnn.com/us/live-news/michigan-state-university-shooting-updates-2-13-23/index.html; https://www.freep.com/story/news/local/michigan/2023/02/13/michigan-state-shooting-what-we-know-about-shots-fired-on-campus/69901251007/; https://abcnews.go.com/US/anthony-mcrae-suspected-michigan-state-shooter/story?id=97195504; https://www.nytimes.com/2023/02/16/us/michigan-state-shooting-professor-berkey-hall.html?referringSource=articleShare; https://www.nbcnews.com/news/us-news/msu-shooter-was-found-2-legally-purchased-guns-ammo-threatening-note-o-rcna70973",
+        "mental_health_sources": "https://abcnews.go.com/US/anthony-mcrae-suspected-michigan-state-shooter/story?id=97195504",
+        "changes": "Added new sources cnn, abcnews, nytimes, etc to help confirm and update data on mental health isssues, weapon details, weapon type"
+    },
+    {
+        "case": "Trestle Trail bridge shooting",
+        "date": "2015-06-11",
+        "weapon_type": "Two handguns",
+        "changes": "Updated weapon_type because original value contained a newline which broke statistics.md output."
+    },
+    {
+        "case": "Caltrans maintenance yard shooting",
+        "date": "1997-12-18",
+        "weapon_type": "One semiautomatic handgun",
+        "changes": "Updated weapon_type because original value contained a newline which broke statistics.md output."
+    },
+    {
+        "case": "Springfield convenience store shooting",
+        "date": "2020-03-16",
+        "weapon_type": "One semiautomatic rifle, one semiautomatic handgun",
+        "summary": "Joaquin S. Roman, 31, went on a rampage culminating at a Kum & Go, killing four people, including a police officer, before fatally shooting himself on the scene.",
+        "changes": "Updated weapon_type to be consistent with other records. Removed bad special characters from summary."
+    },
+    {
+        "case": "University of Virginia shooting",
+        "date": "2022-11-13",
+        "weapon_type": "One semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent"
+    },
+    {
+        "case": "LGBTQ club shooting",
+        "date": "2022-11-19",
+        "weapon_type": "One semiautomatic rifle, one semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Raleigh spree shooting",
+        "date": "2022-10-13",
+        "weapon_type": "One shotgun, one semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "LA dance studio mass shooting",
+        "date": "2023-01-21",
+        "weapon_type": "One semiautomatic rifle",
+        "weapon_details": "Details pending",
+        "changes": "Updated weapon_type to be consistent with other records, Moved (Details pending) to weapon_details."
+    },
+    {
+        "case": "Louisville bank shooting",
+        "date": "2023-04-10",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Texas outlet mall shooting",
+        "date": "2023-05-06",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type to be consistent with other records."
+    },
+    {
+        "case": "New Mexico neighborhood shooting",
+        "date": "2023-05-15",
+        "weapon_type": "One semiautomatic rifle, one semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent"
+    },
+    {
+        "case": "Baton Rouge police shooting",
+        "date": "2016-07-17",
+        "weapon_type": "One semiautomatic rifle, one semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent"
+    },
+    {
+        "case": "Sandy Hook Elementary massacre",
+        "date": "2012-12-14",
+        "weapon_type": "One semiautomatic rifle, one semiautomatic shotgun, two semiautomatic handguns",
+        "changes": "Updated weapon_type to be consistent"
+    },
+    {
+        "case": "Alturas tribal shooting",
+        "date": "2014-02-20",
+        "weapon_type": "One semiautomatic handgun, one butcher knife",
+        "changes": "Updated weapon_type to be consistent with other records. (Matches with weapon_details)"
+    },
+    {
+        "case": "Columbine High School massacre",
+        "date": "1999-04-20",
+        "weapon_type": "One semiautomatic rifle, two shotguns, one semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Isla Vista mass murder",
+        "date": "2014-05-23",
+        "weapon_type": "Three semiautomatic handguns, two hunting knives",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Northern Illinois University shooting",
+        "date": "2008-02-14",
+        "weapon_type": "One shotgun, three semiautomatic handguns",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Red Lake massacre",
+        "date": "2005-03-21",
+        "weapon_type": "One shotgun, two semiautomatic handguns",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Navistar shooting",
+        "date": "2001-02-05",
+        "weapon_type": "Two rifles, one shotgun, one revolver",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Trolley Square shooting",
+        "date": "2007-02-12",
+        "weapon_type": "One shotgun, one revolver",
+        "summary": "Sulejman Talovi, 18, rampaged through the shopping center until he was shot dead by police.",
+        "changes": "Updated weapon_type to be consistent with other records. Removed bad special characters from summary."
+    },
+    {
+        "case": "Carthage nursing home shooting",
+        "date": "2009-03-29",
+        "weapon_type": "One shotgun, one revolver",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "ESL shooting",
+        "date": "1988-02-16",
+        "weapon_type": "One rifle, one shotgun, two semiautomatic handguns, two revolvers",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Thurston High School shooting",
+        "date": "1998-05-21",
+        "weapon_type": "One rifle, two semiautomatic handguns",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "San Francisco UPS shooting",
+        "date": "2017-06-14",
+        "weapon_type": "Two semiautomatic handguns",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Virginia Beach municipal building shooting",
+        "date": "2019-05-31",
+        "weapon_type": "Two semiautomatic handguns",
+        "summary": "DeWayne Craddock, 40, a municipal city worker wielding handguns, a suppressor and high-capacity magazines, killed en masse inside a Virginia Beach municipal building in the Princess Anne area late in the day on a Friday, before dying in a prolonged gun battle with police. Craddock reportedly had submitted his resignation from his job that morning. He was a veteran of the Virginia Army National Guard, and \"had a shaved head, bodybuilder's physique and cameras in the windows of his house on a peaceful cul-de-sac,\" according to the Washington Post.",
+        "changes": "Updated weapon_type to be consistent with other records. Updated summary to remove bad special characters."
+    },
+    {
+        "case": "Atlanta massage parlor shootings",
+        "date": "2021-03-16",
+        "weapon_type": "One semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Concrete company shooting",
+        "date": "2022-06-09",
+        "weapon_type": "One semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Virginia Walmart shooting",
+        "date": "2022-11-22",
+        "weapon_type": "One semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Half Moon Bay spree shooting",
+        "date": "2023-01-23",
+        "weapon_type": "One semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Amish school shooting",
+        "date": "2006-10-02",
+        "weapon_type": "One rifle, one shotgun, one semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Lockheed Martin shooting",
+        "date": "2003-07-08",
+        "weapon_type": "Two rifles, one shotgun, one semiautomatic handgun, one derringer",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Westside Middle School killings",
+        "date": "1998-03-24",
+        "weapon_type": "Two rifles, two semiautomatic handguns, three revolvers, two derringers",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "United States Postal Service shooting",
+        "date": "1986-08-20",
+        "prior_signs_mental_health_issues": "Unclear",
+        "changes": "Updated prior_signs_mental_health_issues, removing a space after the word Unclear"
+    },
+    {
+        "case": "UNLV shooting",
+        "date": "2023-12-06",
+        "weapon_type": "Two semiautomatic handguns",
+        "weapon_details": "Two 9mm handguns with nine loaded magazines.",
+        "sources": "https://www.nbcnews.com/news/us-news/anthony-polito-s-know-unlv-shooting-suspect-accused-killing-3-wounding-rcna128499; https://www.reviewjournal.com/crime/shootings/police-engaged-suspect-in-shootout-unlv-police-chief-says-2960370/; https://www.cnn.com/2023/12/06/us/university-of-nevada-las-vegas-campus-shooting/index.html; https://news.yahoo.com/authorities-responding-reports-multiple-victims-201320923.html;https://www.cnn.com/2023/12/08/us/university-of-nevada-las-vegas-shooting-friday/index.html;",
+        "changes": "Added weapon_type which was provided on updated source link from CNN."
+    },
+    {
+        "case": "Apalachee High School shooting",
+        "date": "2024-09-04",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Arkansas grocery store shooting",
+        "date": "2024-06-21",
+        "weapon_type": "One shotgun, one semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Maine bowling alley and bar shootings",
+        "date": "2023-10-25",
+        "weapon_type": "One semiautomatic rifle",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Jacksonville Dollar General store shooting",
+        "date": "2023-08-26",
+        "weapon_type": "One semiautomatic rifle, one semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Orange County biker bar shooting",
+        "date": "2023-08-23",
+        "weapon_type": "One shotgun, two semiautomatic handguns",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Philadelphia neighborhood shooting",
+        "date": "2023-07-03",
+        "weapon_type": "One semiautomatic rifle, one semiautomatic handgun",
+        "changes": "Updated weapon_type to be consistent with other records"
+    },
+    {
+        "case": "Las Vegas Strip massacre",
+        "date": "2017-10-01",
+        "summary": "Stephen Craig Paddock, 64, fired a barrage of rapid gunfire using semiautomatic rifles modified with \"bump stocks\" at thousands of concertgoers on the Las Vegas Strip late on a Sunday night; Paddock had positioned himself in a corner suite on the 32nd floor of the Mandalay Bay Resort and Casino, where he took aim from windows he'd smashed open. Police responding to the attack found Paddock inside the hotel suite, deceased from a self-inflicted gunshot.",
+        "changes": "Removed bad special characters from summary."
+    }
+]
