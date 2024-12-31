@@ -346,4 +346,4 @@ $($STATS_WeaponCombos | New-MDTable -Shrink | Out-String)
 @"
 
 
-$OutPut > "$CPSScriptRoot\Statistics.md"
+$OutPut > (Join-Path $CPSScriptRoot -ChildPath "Export" | Join-Path -ChildPath "Statistics.md")

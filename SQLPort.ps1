@@ -40,7 +40,7 @@ Start-Log -LogPath $LogPath -LogName $LogName -ScriptVersion $Version
 ########################
 
 # This is just to test what the sql output would look like for formatting issues
-$CHTestSQLFile = "$CPSScriptRoot\Export\CHtest.sql"
+$CHTestSQLFile = "$CPSScriptRoot\Export\CHInsertQuery.sql"
 if (Test-Path -Path $CHTestSQLFile) {
     Remove-Item -Path $CHTestSQLFile -Force
     Write-Host "File removed: $CHTestSQLFile"
@@ -48,7 +48,7 @@ if (Test-Path -Path $CHTestSQLFile) {
     Write-Host "File does not exist: $CHTestSQLFile"
 }
 
-$MJTestSQLFile = "$CPSScriptRoot\Export\MJtest.sql"
+$MJTestSQLFile = "$CPSScriptRoot\Export\MJInsertQuery.sql"
 if (Test-Path -Path $MJTestSQLFile) {
     Remove-Item -Path $MJTestSQLFile -Force
     Write-Host "File removed: $MJTestSQLFile"
