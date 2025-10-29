@@ -73,9 +73,9 @@ Path|Purpose
 |   Codeholics - Mass Shootings Database 1982-2023.csv   |   Final report after data changes made by `start.ps1`. `\DataWorld` contains the same export but without any `'` or `"` within the data.
 |   Statistics.md   |   Auto generated statistics breakdown
 |   Codeholics - Mass Shootings Database 1982-2024.JSON    |    `Codeholics - Mass Shootings Database 1982-2023.csv` converted into JSON format
-|   MassShooterDatabase.sqlite |   The final results of this project have been stored in a SQLite database, which includes both the original dataset from Mother Jones and the Codeholics Edition. This database serves as a reliable and efficient resource for data scientists seeking to analyze and report on mass shootings. To facilitate the use of the database, sample statistics queries have been provided in the `/SQL` folder. These queries offer a useful starting point for data scientists seeking to conduct statistical analyses on mass shootings data.
-|   CHInsertQuery.sql   |   Query used to insert CH Edition into Sqlite
-|   MJInsertQuery.sql   |   Query used to insert MJ Edition into Sqlite
+|   MassShooterDatabase.sqlite |   The final results of this project have been stored in a SQLite database, which includes both the original dataset from Mother Jones and the Codeholics Edition. This database serves as a reliable and efficient resource for data scientists seeking to analyze and report on mass shootings. To facilitate the use of the database, sample statistics queries have been provided in the `/SQL` folder. These queries offer a useful starting point for data scientists seeking to conduct statistical analyses on mass shootings' data.
+|   CHInsertQuery.sql   |   Query used to insert CH Edition into SQLite
+|   MJInsertQuery.sql   |   Query used to insert MJ Edition into SQLite
 
 <br>
 
