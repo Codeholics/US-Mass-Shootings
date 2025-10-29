@@ -24,7 +24,7 @@ function Get-MotherJonesDB {
         [string]$ExportOG = (Join-Path $Output -ChildPath "Mother Jones Raw.csv"),
 
         [Parameter(Mandatory=$false)]
-        [string]$ExportFixed = (Join-Path -Path $Output -ChildPath "Mother Jones - Mass Shootings Database 1982-2024.csv")
+        [string]$ExportFixed = (Join-Path -Path $Output -ChildPath "Mother Jones - Mass Shootings Database 1982-2025.csv")
     )
 
     # Mother Jones Mass Shooting Database

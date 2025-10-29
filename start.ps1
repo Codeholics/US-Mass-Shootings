@@ -2,8 +2,8 @@ Import-Module ImportExcel
 
 # Path to the root directory of the script
 # Using CLI, Navigate to the root directory of the script and run the script "./start.ps1"
-$CPSScriptRoot = $PSScriptRoot
-# $CPSScriptRoot = "D:\Code\Repos\US-Mass-Shootings"
+#$CPSScriptRoot = $PSScriptRoot
+$CPSScriptRoot = "D:\Code\Repos\US-Mass-Shootings"
 
 # Importing Functions
     # Function to edit cases
@@ -25,6 +25,7 @@ $ExportWebView = Join-Path -Path $ExportPath -ChildPath 'WebView.html'
 $ExportCHEdition = Join-Path -Path $ExportPath -ChildPath "Codeholics - Mass Shootings Database $DatasetYear.csv"
 $ExportedCHEditionDW = Join-Path -Path $CPSScriptRoot -ChildPath 'DataWorld' | Join-Path -ChildPath "Codeholics - Mass Shootings Database $DatasetYear.csv"
 $ImportCSVPath = Join-Path -Path $ExportPath -ChildPath "Mother Jones - Mass Shootings Database $DatasetYear.csv"
+#$ImportCSVPath = Join-Path -Path $ExportPath -ChildPath "Mother Jones - Mass Shootings Database 1982-2024.csv"
 
 # Log Variables
 $LogPath = Join-Path -Path $CPSScriptRoot -ChildPath 'Logs'
@@ -57,7 +58,7 @@ Catch{
     Write-LogError -LogPath $LogFilePath -Message "[$(Get-Date)] Mother Jones CSV copy failed" -ToScreen
 }
 
-# Check and confrim the new CSV is avaiable before continuing
+# Check and confirm the new CSV is available before continuing
 try {
     $Spreadsheet = (Import-csv -Path $ImportCSVPath)
     Write-LogInfo -LogPath $LogFilePath -Message "[$(Get-Date)] Mother Jones CSV imported from: [$ImportCSVPath]" -ToScreen

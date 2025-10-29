@@ -22,8 +22,8 @@ $DBPath = Join-Path -Path $ExportPath -ChildPath 'MassShooterDatabase.sqlite'
 
 # Import and Export FileName Variables
 #ExportWebView = Join-Path -Path $ExportPath -ChildPath 'WebView.html'
-$ExportCHEdition = Join-Path -Path $ExportPath -ChildPAth 'Codeholics - Mass Shootings Database 1982-2024.csv'
-$ImportCSVPath = Join-Path -Path $ExportPath -ChildPath 'Mother Jones - Mass Shootings Database 1982-2024.csv'
+$ExportCHEdition = $ExportCHEdition # Variable set in start.ps1
+$ImportCSVPath = $ImportCSVPath # Variable set in start.ps1
 
 <# Log Variables
 $LogPath = Join-Path -Path $CPSScriptRoot -ChildPath 'Logs'
